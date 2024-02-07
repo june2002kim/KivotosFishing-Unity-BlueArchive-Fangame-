@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33983726801fe244ea8f22ed307954e1, type: 3}
+  m_Name: Fish Data 2
+  m_EditorClassIdentifier: 
+  fishName: "\uB2EC\uCF64\uCEE4\uD53C \uCFE0\uD3F0"
+  fishRarity: 0
+  fishArea: 0
+  fishImage: {fileID: 0}
+  fishDescription: "\uBC29\uACFC\uD6C4\uB514\uC800\uD2B8\uBD80\uAC00 \uC88B\uC544\uD558\uB294
+    \uB514\uC800\uD2B8\uAC00\uAC8C \uCFE0\uD3F0. \uAE30\uD55C\uC774 \uC9C0\uB09C\uB4EF\uD558\uB2E4"
