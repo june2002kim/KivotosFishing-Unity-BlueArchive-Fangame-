@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330a24f4fd8f1144a85c2f8707326101, type: 3}
+  m_Name: Serika
+  m_EditorClassIdentifier: 
+  characterName: "\uC138\uB9AC\uCE74"
+  characterSchool: "\uB300\uCC45\uC704\uC6D0\uD68C"
+  profileImage:
+  - {fileID: -1257330892, guid: 1b423373d30c2ce4883595d478fa1b3d, type: 3}
+  - {fileID: -1576368220, guid: 1b423373d30c2ce4883595d478fa1b3d, type: 3}
+  - {fileID: -1095258831, guid: 1b423373d30c2ce4883595d478fa1b3d, type: 3}
+  - {fileID: -1698820955, guid: 1b423373d30c2ce4883595d478fa1b3d, type: 3}
+  - {fileID: 853792303, guid: 1b423373d30c2ce4883595d478fa1b3d, type: 3}
+  - {fileID: -720047101, guid: 1b423373d30c2ce4883595d478fa1b3d, type: 3}
+  - {fileID: 270609178, guid: 1b423373d30c2ce4883595d478fa1b3d, type: 3}

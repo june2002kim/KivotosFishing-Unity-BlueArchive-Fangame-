@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33983726801fe244ea8f22ed307954e1, type: 3}
   m_Name: Fish Data 11
   m_EditorClassIdentifier: 
-  fishName: "\uBE68\uAC04 \uAC70\uBD81"
+  fishName: "\uAC00\uB77C\uB8E8\uD30C"
   fishRarity: 0
   fishArea: 3
-  fishImage: {fileID: 0}
-  fishDescription: "\uB0B4 \uC55E\uC758 \uC0C1\uB300\uC5D0\uAC8C \uB358\uC9C0\uACE0\uB9CC
-    \uC2F6\uB2E4"
+  fishImage: {fileID: 1405927518, guid: 502b4e6281cf2d341a8c1d743b3e56ea, type: 3}
+  fishProfile: {fileID: 1405927518, guid: 502b4e6281cf2d341a8c1d743b3e56ea, type: 3}
+  fishDescription: "\uC628\uCC9C\uC5D0 \uC0AC\uB294 \uBBFC\uBB3C\uACE0\uAE30\uC57C.
+    \r\n\uBB3C \uC18D\uC5D0 \uBAB8\uC744 \uB2F4\uADF8\uBA74 \uC8FD\uC740 \uC138\uD3EC\uB97C
+    \uBA39\uACE0 \uC0C8\uC0B4\uB9CC \uB0A8\uACA8\uC918\uC11C\r\n\uB2E5\uD130\uD53C\uC26C\uB77C\uB294
+    \uC560\uCE6D\uC774 \uC788\uC5B4."

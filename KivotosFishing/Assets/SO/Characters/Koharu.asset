@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 330a24f4fd8f1144a85c2f8707326101, type: 3}
   m_Name: Koharu
   m_EditorClassIdentifier: 
-  characterName: Koharu
-  characterSchool: Trinity
-  profileImage: []
-  standingImage: []
+  characterName: "\uCF54\uD558\uB8E8"
+  characterSchool: "\uBCF4\uCDA9\uC218\uC5C5\uBD80"
+  profileImage:
+  - {fileID: 771614355, guid: d19bc46cfdff2c947b59528c0beba1d9, type: 3}
+  - {fileID: -241435095, guid: d19bc46cfdff2c947b59528c0beba1d9, type: 3}
+  - {fileID: 714343032, guid: d19bc46cfdff2c947b59528c0beba1d9, type: 3}
+  - {fileID: 520460397, guid: d19bc46cfdff2c947b59528c0beba1d9, type: 3}
+  - {fileID: 988490414, guid: d19bc46cfdff2c947b59528c0beba1d9, type: 3}
+  - {fileID: 970364040, guid: d19bc46cfdff2c947b59528c0beba1d9, type: 3}

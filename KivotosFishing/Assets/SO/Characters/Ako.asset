@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330a24f4fd8f1144a85c2f8707326101, type: 3}
+  m_Name: Ako
+  m_EditorClassIdentifier: 
+  characterName: "\uC544\uCF54"
+  characterSchool: "\uC120\uB3C4\uBD80"
+  profileImage:
+  - {fileID: -1431927261, guid: 67745194b3eb68347b5d0585b525249a, type: 3}
+  - {fileID: 1853487809, guid: 67745194b3eb68347b5d0585b525249a, type: 3}
+  - {fileID: 1384593649, guid: 67745194b3eb68347b5d0585b525249a, type: 3}

@@ -15,6 +15,7 @@ MonoBehaviour:
   fishName: "\uD504\uB7AD\uD06C\uBC84\uAC70 \uCFE0\uD3F0"
   fishRarity: 0
   fishArea: 0
-  fishImage: {fileID: 0}
+  fishImage: {fileID: -774207561, guid: 502b4e6281cf2d341a8c1d743b3e56ea, type: 3}
+  fishProfile: {fileID: -774207561, guid: 502b4e6281cf2d341a8c1d743b3e56ea, type: 3}
   fishDescription: "\uBBF8\uC2DD\uC5F0\uAD6C\uD68C\uAC00 \uC88B\uC544\uD558\uB294
-    \uC74C\uC2DD\uC810 \uCFE0\uD3F0. \uAE30\uD55C\uC774 \uC9C0\uB09C\uB4EF\uD558\uB2E4"
+    \uC74C\uC2DD\uC810 \uCFE0\uD3F0. \n\uD558\uC9C0\uB9CC \uAE30\uD55C\uC774 \uC9C0\uB09C\uB4EF\uD558\uB2E4"

@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33983726801fe244ea8f22ed307954e1, type: 3}
   m_Name: Fish Data 7
   m_EditorClassIdentifier: 
-  fishName: "\uC1A1\uC0AC\uB9AC"
+  fishName: "\uC218\uD3EC\uC548"
   fishRarity: 0
   fishArea: 1
-  fishImage: {fileID: 0}
-  fishDescription: "\uC791\uB2E4"
+  fishImage: {fileID: 99546085, guid: 502b4e6281cf2d341a8c1d743b3e56ea, type: 3}
+  fishProfile: {fileID: 99546085, guid: 502b4e6281cf2d341a8c1d743b3e56ea, type: 3}
+  fishDescription: "\uD488\uC885\uAC1C\uB7C9\uB41C \uAE08\uBD95\uC5B4\uC57C.\r\n\uB450
+    \uAC1C\uC758 \uBB3C\uC8FC\uBA38\uB2C8 \uBAA8\uC591\uC758 \uAC01\uB9C9\uC774 \uADC0\uC5FD\uAE30\uB3C4
+    \uC9D5\uADF8\uB7FD\uAE30\uB3C4 \uD574."

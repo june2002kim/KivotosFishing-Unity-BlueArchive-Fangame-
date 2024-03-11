@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33983726801fe244ea8f22ed307954e1, type: 3}
   m_Name: Fish Data 2
   m_EditorClassIdentifier: 
-  fishName: "AP \uBC15\uCE74\uC2A4\uBCD1"
+  fishName: "\uBC18\uC9DD\uC774\uB294 \uAF43\uB2E4\uBC1C"
   fishRarity: 1
   fishArea: 0
-  fishImage: {fileID: 0}
-  fishDescription: gas gas gas
+  fishImage: {fileID: 2001554575, guid: 502b4e6281cf2d341a8c1d743b3e56ea, type: 3}
+  fishProfile: {fileID: 2001554575, guid: 502b4e6281cf2d341a8c1d743b3e56ea, type: 3}
+  fishDescription: "\uD06C\uB9AC\uC2A4\uD0C8\uB85C \uB9CC\uB4E4\uC5B4\uC9C4 \uAF43\uB2E4\uBC1C\uC774\uC57C.\r\n\uBE5B\uC744
+    \uBE44\uCD94\uBA74 \uB9CC\uD654\uACBD\uCC98\uB7FC \uBC18\uC9DD\uC5EC."

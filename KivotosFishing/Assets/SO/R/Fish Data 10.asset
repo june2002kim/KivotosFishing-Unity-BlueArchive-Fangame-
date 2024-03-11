@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33983726801fe244ea8f22ed307954e1, type: 3}
   m_Name: Fish Data 10
   m_EditorClassIdentifier: 
-  fishName: "\uD30C\uB780 \uAC70\uBD81"
+  fishName: "\uD770\uB3D9\uAC00\uB9AC"
   fishRarity: 0
   fishArea: 3
-  fishImage: {fileID: 0}
-  fishDescription: "\uAC00\uC7A5 \uC55E\uC11C\uB098\uAC00\uB294 \uC0C1\uB300\uC5D0\uAC8C
-    \uB358\uC9C0\uACE0\uB9CC \uC2F6\uB2E4"
+  fishImage: {fileID: -1684704350, guid: 502b4e6281cf2d341a8c1d743b3e56ea, type: 3}
+  fishProfile: {fileID: -1684704350, guid: 502b4e6281cf2d341a8c1d743b3e56ea, type: 3}
+  fishDescription: "\uB9D0\uBBF8\uC798\uACFC \uACF5\uC0DD\uD558\uB294 \uBAA8\uC2B5\uC774
+    \uADC0\uC5EC\uC6B4 \uBB3C\uACE0\uAE30\uC57C."

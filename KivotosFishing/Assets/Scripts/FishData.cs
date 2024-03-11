@@ -33,6 +33,9 @@ public class FishData : ScriptableObject
     [SerializeField] private Sprite fishImage;
     public Sprite FishImage {get {return fishImage;}}
 
+    [SerializeField] private Sprite fishProfile;
+    public Sprite FishProfile {get {return fishProfile;}}
+
     [SerializeField] [TextArea(3, 5)]private string fishDescription;
     public string FishDescription {get {return fishDescription;}}
 }

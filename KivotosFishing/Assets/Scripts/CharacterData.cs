@@ -15,7 +15,4 @@ public class CharacterData : ScriptableObject
 
     [SerializeField] private Sprite[] profileImage;
     public Sprite[] ProfileImage {get {return profileImage;}}
-
-    [SerializeField] private Sprite[] standingImage;
-    public Sprite[] StandingImage {get {return standingImage;}}
 }

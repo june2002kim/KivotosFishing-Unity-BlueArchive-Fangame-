@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 330a24f4fd8f1144a85c2f8707326101, type: 3}
   m_Name: Shiroko
   m_EditorClassIdentifier: 
-  characterName: Shiroko
-  characterSchool: Avidos
-  profileImage: []
-  standingImage: []
+  characterName: "\uC2DC\uB85C\uCF54"
+  characterSchool: "\uB300\uCC45\uC704\uC6D0\uD68C"
+  profileImage:
+  - {fileID: 1276018283, guid: 96749d2e106c0a14092b8ae60d7d6c23, type: 3}
+  - {fileID: 1621873983, guid: 96749d2e106c0a14092b8ae60d7d6c23, type: 3}
+  - {fileID: -60752719, guid: 96749d2e106c0a14092b8ae60d7d6c23, type: 3}
