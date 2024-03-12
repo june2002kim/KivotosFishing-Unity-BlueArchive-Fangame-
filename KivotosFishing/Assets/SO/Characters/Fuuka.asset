@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: "\uD6C4\uC6B0\uCE74"
   characterSchool: "\uAE09\uC591\uBD80"
-  profileImage:
+  profileimage:
   - {fileID: -1031022263, guid: fee8c386c8ebe7d48aed4afaec53ff80, type: 3}
   - {fileID: 1688139019, guid: fee8c386c8ebe7d48aed4afaec53ff80, type: 3}
   - {fileID: -1469108446, guid: fee8c386c8ebe7d48aed4afaec53ff80, type: 3}

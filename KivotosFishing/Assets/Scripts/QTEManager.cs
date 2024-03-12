@@ -11,6 +11,8 @@ public class QTEManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private GachaManager gachaManager;
     [SerializeField] private QTEAlignment qteAlignment;
+    [SerializeField] private FisingManager fishingManager;
+    [SerializeField] private GameObject qteCanvas;
 
     [Header("variables")]
     [SerializeField] public int[] arrowDirection = new int[5];
@@ -44,18 +46,16 @@ public class QTEManager : MonoBehaviour
 
     void Update()
     {
-        if (!isWatingQTE && Input.GetKeyDown(KeyCode.RightShift))
+        if (!isWatingQTE && fishingManager.shirokoPhase == fishingPhase.ENTERQTE)
         {
-            StartCoroutine(Test());
+            qteCanvas.SetActive(true);
+            StartCoroutine(StartQTE());
+            fishingManager.shirokoPhase = fishingPhase.BLOCKQTE;
         }
 
         if (isWatingQTE && Input.anyKeyDown)
         {
-            if (Input.GetKeyDown(KeyCode.RightShift))
-            {
-                ;
-            }
-            else if (leftRight == 0)
+            if (leftRight == 0)
             {
                 if (Input.GetKey(KeyCode.RightArrow))
                 {
@@ -66,7 +66,7 @@ public class QTEManager : MonoBehaviour
                     isFailed = true;
                 }
 
-                StartCoroutine(Play());
+                //StartCoroutine(Play());
             }
             else
             {
@@ -79,8 +79,9 @@ public class QTEManager : MonoBehaviour
                     isFailed = true;
                 }
 
-                StartCoroutine(Play());
+                //StartCoroutine(Play());
             }
+            StartCoroutine(PlayQTE());
         }
     }
 
@@ -115,7 +116,7 @@ public class QTEManager : MonoBehaviour
         return keyCount;
     }
 
-    private IEnumerator Test()
+    private IEnumerator StartQTE()
     {
         isWatingQTE = true;
 
@@ -131,7 +132,7 @@ public class QTEManager : MonoBehaviour
         yield return null;
     }
 
-    private IEnumerator Play()
+    private IEnumerator PlayQTE()
     {
         if (!isFailed)
         {
@@ -145,6 +146,9 @@ public class QTEManager : MonoBehaviour
                 
                 resetQTE();
 
+                qteCanvas.SetActive(false);
+                fishingManager.shirokoPhase = fishingPhase.ENTERDBD;
+
                 yield break;
             }
             leftRight = arrowDirection[index];
@@ -156,6 +160,8 @@ public class QTEManager : MonoBehaviour
             Debug.Log("FAIL!");
             
             resetQTE();
+            fishingManager.resetPhase();
+            qteCanvas.SetActive(false);
         }
     }
 
@@ -190,7 +196,9 @@ public class QTEManager : MonoBehaviour
         if(stopTimer && currentTime<=0)
         {
             Debug.Log("TIME OUT!");
+
             resetQTE();
+            fishingManager.resetPhase();
         }
     }
 

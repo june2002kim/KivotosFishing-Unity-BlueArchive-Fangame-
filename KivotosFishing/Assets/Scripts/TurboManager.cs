@@ -8,6 +8,8 @@ public class TurboManager : MonoBehaviour
 {
     [Header("Reference")]
     [SerializeField] private GachaManager gachaManager;
+    [SerializeField] private FisingManager fishingManager;
+    [SerializeField] private GameObject turboCanvas;
     [SerializeField] private int rarity;
 
     [Header("Timer")]
@@ -30,19 +32,21 @@ public class TurboManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.KeypadEnter))
+        if(fishingManager.shirokoPhase == fishingPhase.ENTERTURBO)
         {
+            turboCanvas.SetActive(true);
             rarity = gachaManager.fish.fishData.FishRarity.ToString().Length;
 
             plusValue = plusWeight / rarity;
             minusValue = rarity * minusWeight;
             
             resetTimer();
-
             StartCoroutine(Timer());
+
+            fishingManager.shirokoPhase = fishingPhase.BLOCKTURBO;
         }
 
-        if(Input.GetKeyDown(KeyCode.DownArrow))
+        if(Input.GetKeyDown(KeyCode.Space) && fishingManager.shirokoPhase == fishingPhase.BLOCKTURBO)
         {
             currentTime += plusValue;
         }
@@ -71,10 +75,13 @@ public class TurboManager : MonoBehaviour
             if(currentTime <= 0)
             {
                 Debug.Log("MISS!");
+                fishingManager.resetPhase();
             }
             else{
                 Debug.Log("HIT!");
+                fishingManager.shirokoPhase = fishingPhase.ENTERRECORD;
             }
+            turboCanvas.SetActive(false);
         }
     }
 

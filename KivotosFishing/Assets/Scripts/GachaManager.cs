@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class GachaManager : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] private FisingManager fishingManager;
+
     [Header("Fish Pool")]
     [SerializeField] List<FishData> R_Fish;
     [SerializeField] List<FishData> SR_Fish;
@@ -22,10 +25,14 @@ public class GachaManager : MonoBehaviour
 
     void Update()
     {
-        test();
+        if(fishingManager.shirokoPhase == fishingPhase.ENTERGACHA)
+        {
+            fishingManager.shirokoPhase = fishingPhase.BLOCKGACHA;
+            startGacha();
+        }
     }
 
-    private void test()
+    private void startGacha()
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
@@ -37,6 +44,8 @@ public class GachaManager : MonoBehaviour
 
             fish = SpawnFish();
             fish.WatchFishInfo();
+
+            fishingManager.shirokoPhase = fishingPhase.ENTERQTE;
         }
     }
 

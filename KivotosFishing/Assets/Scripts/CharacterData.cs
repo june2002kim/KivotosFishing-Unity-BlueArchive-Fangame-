@@ -8,11 +8,11 @@ using UnityEngine;
 public class CharacterData : ScriptableObject
 {
     [SerializeField] private string characterName;
-    public string CharacterName {get {return CharacterName;}}
+    public string CharacterName {get {return characterName;}}
 
     [SerializeField] private string characterSchool;
     public string CharacterSchool {get {return characterSchool;}}
 
-    [SerializeField] private Sprite[] profileImage;
-    public Sprite[] ProfileImage {get {return profileImage;}}
+    [SerializeField] private Sprite[] profileimage;
+    public Sprite[] ProfileImage {get {return profileimage;}}
 }

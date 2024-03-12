@@ -11,12 +11,36 @@ public class TextData : MonoBehaviour
 [System.Serializable]
 public class dialogueString
 {
-    [SerializeField] private CharacterData characterInfo;
-    public CharacterData CharacterInfo {get {return characterInfo;}}
+    [SerializeField] private CharacterData characterinfo;
+    public CharacterData CharacterInfo {get {return characterinfo;}}
 
-    [SerializeField] [TextArea(3, 5)]private string dialogueText;
-    public string DialogueText {get {return dialogueText;}}
+    [SerializeField] private int profileindex;
+    public int profileIndex {get {return profileindex;}}
 
-    [SerializeField] private bool lastText;
-    public bool LastText {get {return lastText;}}
+    [SerializeField] [TextArea(3, 5)]private string dialoguetext;
+    public string DialogueText {get {return dialoguetext;}}
+
+    [SerializeField] private bool lasttext;
+    public bool LastText {get {return lasttext;}}
+
+    [SerializeField] private bool isUnknown;
+    public bool IsUnknown {get {return isUnknown;}}
+
+    [SerializeField] private bool isUpEmoji;
+    public bool IsUpEmoji {get {return isUpEmoji;}}
+
+    [SerializeField] private Sprite upEmoji;
+    public Sprite UpEmoji {get {return upEmoji;}}
+
+    [SerializeField] private GameObject upEmojiLocation;
+    public GameObject UpEmojiLocation {get {return upEmojiLocation;}}
+
+    [SerializeField] private bool isDownEmoji;
+    public bool IsDownEmoji {get {return isDownEmoji;}}
+
+    [SerializeField] private Sprite downEmoji;
+    public Sprite DownEmoji {get {return downEmoji;}}
+
+    [SerializeField] private GameObject downEmojiLocation;
+    public GameObject DownEmojiLocation {get {return downEmojiLocation;}}
 }

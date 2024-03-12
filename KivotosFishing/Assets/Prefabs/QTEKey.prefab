@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QTEKeys:
-  - {fileID: 1763936058, guid: 3661531706b076c498ec6b7f90c055b0, type: 3}
-  - {fileID: 1765163507, guid: 3661531706b076c498ec6b7f90c055b0, type: 3}
-  - {fileID: -1596124659, guid: 3661531706b076c498ec6b7f90c055b0, type: 3}
-  - {fileID: 1229381785, guid: 3661531706b076c498ec6b7f90c055b0, type: 3}
+  - {fileID: 1602460753, guid: 28b64188e0540074e883eb235bd03b04, type: 3}
+  - {fileID: 162496068, guid: 28b64188e0540074e883eb235bd03b04, type: 3}
+  - {fileID: 903074216, guid: 28b64188e0540074e883eb235bd03b04, type: 3}
+  - {fileID: 57927228, guid: 28b64188e0540074e883eb235bd03b04, type: 3}

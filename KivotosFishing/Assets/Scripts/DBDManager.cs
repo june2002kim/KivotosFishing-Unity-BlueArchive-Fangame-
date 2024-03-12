@@ -11,11 +11,12 @@ public class DBDManager : MonoBehaviour
     [SerializeField] private GachaManager gachaManager;
     [SerializeField] private QTEManager qteManager;
     [SerializeField] private DBDAlignment dbdAlignment;
+    [SerializeField] private FisingManager fishingManager;
+    [SerializeField] private GameObject dbdCanvas;
 
     [Header("UGUI")]
     [SerializeField] private GameObject DBDCanvas;
     [SerializeField] private GameObject DBDcakePrefab;
-    [SerializeField] private GameObject DBDforeground;
     [SerializeField] private clockHand clockHand;
     
     [Header("Variables")]
@@ -32,8 +33,10 @@ public class DBDManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Backspace))
+        if(fishingManager.shirokoPhase == fishingPhase.ENTERDBD)
         {
+            dbdCanvas.SetActive(true);
+
             GameObject[] spawnedCake = GameObject.FindGameObjectsWithTag("Cake");
             if(spawnedCake.Length != 0)
             {
@@ -42,10 +45,11 @@ public class DBDManager : MonoBehaviour
 
             Setting();
 
-            StartCoroutine(Play());
+            StartCoroutine(PlayDBD());
+            fishingManager.shirokoPhase = fishingPhase.BLOCKDBD;
         }
 
-        if(Input.GetKeyDown(KeyCode.UpArrow))
+        if(Input.GetKeyDown(KeyCode.Space) && fishingManager.shirokoPhase == fishingPhase.BLOCKDBD)
         {
             if(clockHand.isIn)
             {
@@ -78,7 +82,7 @@ public class DBDManager : MonoBehaviour
         isIn = false;
     }
 
-    private IEnumerator Play()
+    private IEnumerator PlayDBD()
     {
         while(!stopTimer)
         {
@@ -111,11 +115,14 @@ public class DBDManager : MonoBehaviour
             if(reverseTimer)
             {
                 Debug.Log("GOOD!");
+                fishingManager.shirokoPhase = fishingPhase.ENTERTURBO;
             }
             else
             {
                 Debug.Log("BAD!");
+                fishingManager.resetPhase();
             }
+            dbdCanvas.SetActive(false);
         }
     }
 }
