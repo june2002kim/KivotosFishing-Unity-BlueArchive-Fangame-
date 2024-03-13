@@ -26,6 +26,7 @@ public class QTEManager : MonoBehaviour
     [SerializeField] private GameObject QTECanvas;
     [SerializeField] private GameObject KeyPanel;
     [SerializeField] private GameObject TimerPanel;
+    [SerializeField] private GameObject QTECam;
 
     [Header("Timer")]
     [SerializeField] private Slider timerSlider;
@@ -48,6 +49,7 @@ public class QTEManager : MonoBehaviour
     {
         if (!isWatingQTE && fishingManager.shirokoPhase == fishingPhase.ENTERQTE)
         {
+            QTECam.SetActive(true);
             qteCanvas.SetActive(true);
             StartCoroutine(StartQTE());
             fishingManager.shirokoPhase = fishingPhase.BLOCKQTE;
@@ -65,8 +67,6 @@ public class QTEManager : MonoBehaviour
                 {
                     isFailed = true;
                 }
-
-                //StartCoroutine(Play());
             }
             else
             {
@@ -78,8 +78,6 @@ public class QTEManager : MonoBehaviour
                 {
                     isFailed = true;
                 }
-
-                //StartCoroutine(Play());
             }
             StartCoroutine(PlayQTE());
         }
@@ -199,6 +197,7 @@ public class QTEManager : MonoBehaviour
 
             resetQTE();
             fishingManager.resetPhase();
+            qteCanvas.SetActive(false);
         }
     }
 

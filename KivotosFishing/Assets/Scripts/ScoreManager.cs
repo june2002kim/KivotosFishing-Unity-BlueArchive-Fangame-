@@ -10,15 +10,11 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private GachaManager gachaManager;
     [SerializeField] private Animator shirokoAnimator;
     [SerializeField] private FisingManager fishingManager;
+    [SerializeField] private GameObject fish;
+    [SerializeField] private ParticleSystem particleSystem;
 
     private int totalScore = 0;
     private int addScore;
-    private bool gotoNextFish;
-
-    void Start()
-    {
-        gotoNextFish = false;
-    }
     
     private void Update()
     {
@@ -27,26 +23,51 @@ public class ScoreManager : MonoBehaviour
             fishingManager.shirokoPhase = fishingPhase.BLOCKRECORD;
             shirokoAnimator.SetBool("isCatching", true);
 
+            fish.GetComponent<SpriteRenderer>().sprite = gachaManager.fish.fishData.FishImage;
+            fish.SetActive(true);
+
+            setParticleColor();
             writeJournal();
             calScore();
-            StartCoroutine(showFish());
         }
 
         if(Input.GetKeyDown(KeyCode.Space) && fishingManager.shirokoPhase == fishingPhase.BLOCKRECORD)
         {
-            gotoNextFish = true;
+            fish.SetActive(false);
+            fishingManager.justCaught = true;
+            fishingManager.resetPhase();
         }
     }
 
-    private IEnumerator showFish()
+    private void setParticleColor()
     {
-        while(!gotoNextFish)
+        var col = particleSystem.colorOverLifetime;
+
+        Gradient grad = new Gradient();
+        
+        if(gachaManager.fish.fishData.FishRarity == fishrarity.SSR)
         {
-            yield return new WaitForSeconds(math.EPSILON);
+            grad.SetKeys( new GradientColorKey[] { new GradientColorKey(Color.magenta, 0.0f), 
+                                                new GradientColorKey(Color.red, 1.0f) }, 
+                        new GradientAlphaKey[] { new GradientAlphaKey(0.8f, 0.0f), 
+                                                new GradientAlphaKey(0.4f, 1.0f) } );
+        }
+        else if(gachaManager.fish.fishData.FishRarity == fishrarity.SR)
+        {
+            grad.SetKeys( new GradientColorKey[] { new GradientColorKey(Color.yellow, 0.0f), 
+                                                new GradientColorKey(Color.green, 1.0f) }, 
+                        new GradientAlphaKey[] { new GradientAlphaKey(0.8f, 0.0f), 
+                                                new GradientAlphaKey(0.3f, 1.0f) } );
+        }
+        else if(gachaManager.fish.fishData.FishRarity == fishrarity.R)
+        {
+            grad.SetKeys( new GradientColorKey[] { new GradientColorKey(Color.blue, 0.0f), 
+                                                new GradientColorKey(Color.cyan, 1.0f) }, 
+                        new GradientAlphaKey[] { new GradientAlphaKey(0.8f, 0.0f), 
+                                                new GradientAlphaKey(0.4f, 1.0f) } );
         }
 
-        fishingManager.resetPhase();
-        gotoNextFish = false;
+        col.color = grad;
     }
 
     private void writeJournal()

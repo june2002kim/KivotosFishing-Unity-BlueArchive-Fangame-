@@ -37,9 +37,15 @@ public class FisingManager : MonoBehaviour
     [SerializeField] private float reactionTime;
     public float ReactionTime {get {return reactionTime;}}
 
+    [Header("UGUI")]
+    [SerializeField] private GameObject QTECam;
+    [SerializeField] private GameObject DBDCam;
+    [SerializeField] private GameObject TURBOCam;
+
     private float currTime;
     private float timerTime;
     private bool stopTimer;
+    public bool justCaught;
 
     private Animator shirokoAnimator;
 
@@ -51,6 +57,7 @@ public class FisingManager : MonoBehaviour
     private void Start()
     {
         resetPhase();
+        justCaught = false;
     }
 
     private void Update()
@@ -73,10 +80,17 @@ public class FisingManager : MonoBehaviour
         {
             if(shirokoPhase == fishingPhase.BEFORECASTING)
             {
-                shirokoAnimator.SetBool("isCasting", true);
-                shirokoPhase = fishingPhase.WAITING;
-                shirokoAnimator.SetBool("isIdle", false);
-                shirokoAnimator.SetBool("isWaiting", true);
+                if(justCaught)
+                {
+                    justCaught = false;
+                }
+                else
+                {
+                    shirokoAnimator.SetBool("isCasting", true);
+                    shirokoPhase = fishingPhase.WAITING;
+                    shirokoAnimator.SetBool("isIdle", false);
+                    shirokoAnimator.SetBool("isWaiting", true);
+                }
             }
             else if(shirokoPhase == fishingPhase.WAITING)
             {
@@ -98,8 +112,12 @@ public class FisingManager : MonoBehaviour
 
     public void resetPhase()
     {
-        shirokoPhase = fishingPhase.BEFORECASTING;
+        QTECam.SetActive(false);
+        DBDCam.SetActive(false);
+        TURBOCam.SetActive(false);
+
         resetAnimBool();
+        shirokoPhase = fishingPhase.BEFORECASTING;
         shirokoAnimator.SetBool("isIdle", true);
 
         gachaRate = SetGachaRate();

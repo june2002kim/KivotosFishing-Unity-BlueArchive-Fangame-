@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,9 @@ public class TurboManager : MonoBehaviour
     [SerializeField] private FisingManager fishingManager;
     [SerializeField] private GameObject turboCanvas;
     [SerializeField] private int rarity;
+
+    [Header("UGUI")]
+    [SerializeField] private GameObject TURBOCam;
 
     [Header("Timer")]
     [SerializeField] private Slider turboSlider;
@@ -34,6 +38,7 @@ public class TurboManager : MonoBehaviour
     {
         if(fishingManager.shirokoPhase == fishingPhase.ENTERTURBO)
         {
+            TURBOCam.SetActive(true);
             turboCanvas.SetActive(true);
             rarity = gachaManager.fish.fishData.FishRarity.ToString().Length;
 

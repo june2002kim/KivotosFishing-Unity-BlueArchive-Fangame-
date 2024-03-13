@@ -18,6 +18,7 @@ public class DBDManager : MonoBehaviour
     [SerializeField] private GameObject DBDCanvas;
     [SerializeField] private GameObject DBDcakePrefab;
     [SerializeField] private clockHand clockHand;
+    [SerializeField] private GameObject DBDCam;
     
     [Header("Variables")]
     [SerializeField] private int cakeCount;
@@ -35,6 +36,7 @@ public class DBDManager : MonoBehaviour
     {
         if(fishingManager.shirokoPhase == fishingPhase.ENTERDBD)
         {
+            DBDCam.SetActive(true);
             dbdCanvas.SetActive(true);
 
             GameObject[] spawnedCake = GameObject.FindGameObjectsWithTag("Cake");
