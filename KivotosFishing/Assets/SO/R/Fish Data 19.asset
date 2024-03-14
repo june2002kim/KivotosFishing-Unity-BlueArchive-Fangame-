@@ -16,5 +16,5 @@ MonoBehaviour:
   fishRarity: 0
   fishArea: 4
   fishImage: {fileID: -1628790410, guid: 502b4e6281cf2d341a8c1d743b3e56ea, type: 3}
-  fishProfile: {fileID: -1737507771, guid: 502b4e6281cf2d341a8c1d743b3e56ea, type: 3}
+  fishProfile: {fileID: -1628790410, guid: 502b4e6281cf2d341a8c1d743b3e56ea, type: 3}
   fishDescription: "\uCE74\uC774\uD150\uC838 \uD551\uD06C"
