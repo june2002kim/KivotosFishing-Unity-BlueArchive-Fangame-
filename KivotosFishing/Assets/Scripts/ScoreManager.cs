@@ -6,15 +6,27 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    [Header("References")]
+    [Header("------References------")]
     [SerializeField] private GachaManager gachaManager;
     [SerializeField] private Animator shirokoAnimator;
     [SerializeField] private FisingManager fishingManager;
+    [SerializeField] private AudioSource shirokoAudioSource;
     [SerializeField] private GameObject fish;
     [SerializeField] private ParticleSystem particleSystem;
 
-    private int totalScore = 0;
+    [Header("------Audios------")]
+    [SerializeField] private AudioClip starClip;
+
+    public int totalCnt;
+    public int totalScore;
     private int addScore;
+
+    void Awake()
+    {
+        totalCnt = 0;
+        totalScore = 0;
+        addScore = 0;
+    }
     
     private void Update()
     {
@@ -23,19 +35,41 @@ public class ScoreManager : MonoBehaviour
             fishingManager.shirokoPhase = fishingPhase.BLOCKRECORD;
             shirokoAnimator.SetBool("isCatching", true);
 
+            shirokoAudioSource.loop = false;
+            shirokoAudioSource.Stop();
+
             fish.GetComponent<SpriteRenderer>().sprite = gachaManager.fish.fishData.FishImage;
             fish.SetActive(true);
+
+            shirokoAudioSource.clip = starClip;
+            shirokoAudioSource.PlayDelayed(1f);
+
+            if(gachaManager.ceilingSys)
+            {
+                CountingCeilingStack();
+            }
 
             setParticleColor();
             writeJournal();
             calScore();
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && fishingManager.shirokoPhase == fishingPhase.BLOCKRECORD)
+        if(Input.GetKeyDown(KeyCode.R) && fishingManager.shirokoPhase == fishingPhase.BLOCKRECORD)
         {
             fish.SetActive(false);
-            fishingManager.justCaught = true;
-            fishingManager.resetPhase();
+            StartCoroutine(fishingManager.HappyFishing());
+        }
+    }
+
+    private void CountingCeilingStack()
+    {
+        if(gachaManager.fish.fishData.FishRarity == fishrarity.SSR)
+        {
+            gachaManager.ceilingStack = 0;
+        }
+        else
+        {
+            gachaManager.ceilingStack++;
         }
     }
 
@@ -80,6 +114,8 @@ public class ScoreManager : MonoBehaviour
 
     private void calScore()
     {
+        totalCnt++;
+
         if(gachaManager.fish.fishData.FishRarity == fishrarity.SSR)
         {
             addScore = 100;
@@ -95,6 +131,6 @@ public class ScoreManager : MonoBehaviour
 
         totalScore += addScore;
 
-        Debug.Log("total score : " + addScore);
+        Debug.Log("total score : " + addScore + "(" + totalCnt + ")");
     }
 }

@@ -8,13 +8,13 @@ using UnityEngine.UI;
 
 public class QTEManager : MonoBehaviour
 {
-    [Header("References")]
+    [Header("------References------")]
     [SerializeField] private GachaManager gachaManager;
     [SerializeField] private QTEAlignment qteAlignment;
     [SerializeField] private FisingManager fishingManager;
     [SerializeField] private GameObject qteCanvas;
 
-    [Header("variables")]
+    [Header("------variables------")]
     [SerializeField] public int[] arrowDirection = new int[5];
     [SerializeField] private bool isWatingQTE;
     [SerializeField] private int keyCount;
@@ -22,23 +22,29 @@ public class QTEManager : MonoBehaviour
     [SerializeField] private int index;
     [SerializeField] private bool isFailed;
 
-    [Header("UGUI")]
+    [Header("------UGUI------")]
     [SerializeField] private GameObject QTECanvas;
     [SerializeField] private GameObject KeyPanel;
     [SerializeField] private GameObject TimerPanel;
     [SerializeField] private GameObject QTECam;
 
-    [Header("Timer")]
+    [Header("------Timer------")]
     [SerializeField] private Slider timerSlider;
-    [SerializeField] private float sliderTime = 5f;
+    [SerializeField] private float sliderTime = 4f;
     [SerializeField] private float currentTime = 0f;
     [SerializeField] private bool stopTimer;
 
+    [Header("------Audio------")]
+    [SerializeField] private AudioClip goodClip;
+    [SerializeField] private AudioClip badClip;
+
+    private AudioSource qteAudioSource;
 
 
     void Start()
     {
         qteAlignment = KeyPanel.GetComponent<QTEAlignment>();
+        qteAudioSource = GetComponent<AudioSource>();
 
         isWatingQTE = false;
         isFailed = false;
@@ -79,6 +85,17 @@ public class QTEManager : MonoBehaviour
                     isFailed = true;
                 }
             }
+
+            if(isFailed)
+            {
+                qteAudioSource.clip = badClip;
+            }
+            else
+            {
+                qteAudioSource.clip = goodClip;
+            }
+            qteAudioSource.Play();
+
             StartCoroutine(PlayQTE());
         }
     }

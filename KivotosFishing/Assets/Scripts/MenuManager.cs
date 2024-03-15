@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class MenuManager : MonoBehaviour
 {
@@ -11,8 +12,12 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Slider volumeslider;
     [SerializeField] private GameObject journal;
+    [SerializeField] private GameObject homeConfirmPanel;
+    [SerializeField] private GameObject pausedPanel;
     private bool isVolumeButton;
-    private bool isJournalButton;
+    private bool isReadingJournal;
+    private bool isGoingHome;
+    private bool isPaused;
 
     private void Start()
     {
@@ -26,7 +31,28 @@ public class MenuManager : MonoBehaviour
         }
 
         isVolumeButton = false;
-        isJournalButton = false;
+        isReadingJournal = false;
+        isGoingHome = false;
+        isPaused = false;
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(isReadingJournal)
+            {
+                ShowJournal();
+            }
+            else if(isGoingHome)
+            {
+                HomeNo();
+            }
+            else
+            {
+                Pause();
+            }
+        }
     }
 
     public void SetVolumeSlider()
@@ -59,15 +85,15 @@ public class MenuManager : MonoBehaviour
 
     public void ShowJournal()
     {
-        if(!isJournalButton)
+        if(!isReadingJournal)
         {
             journal.SetActive(true);
-            isJournalButton = true;
+            isReadingJournal = true;
         }
         else
         {
             journal.SetActive(false);
-            isJournalButton = false;
+            isReadingJournal = false;
         }
     }
 
@@ -76,8 +102,40 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void Home()
+    public void HomeYes()
     {
+        isGoingHome = false;
+        Time.timeScale = 1;
         SceneManager.LoadScene("Home");
+    }
+
+    public void HomeNo()
+    {
+        isGoingHome = false;
+        Time.timeScale = 1;
+        homeConfirmPanel.SetActive(false);
+    }
+
+    public void ShowHomeConfirmPanel()
+    {
+        homeConfirmPanel.SetActive(true);
+        isGoingHome = true;
+        Time.timeScale = 0;
+    }
+
+    public void Pause()
+    {
+        if(!isPaused)
+        {
+            isPaused = true;
+            pausedPanel.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            isPaused = false;
+            pausedPanel.SetActive(false);
+            Time.timeScale = 1;
+        }
     }
 }

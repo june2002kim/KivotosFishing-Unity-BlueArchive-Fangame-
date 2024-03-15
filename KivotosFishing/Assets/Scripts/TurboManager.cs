@@ -7,16 +7,16 @@ using UnityEngine.UI;
 
 public class TurboManager : MonoBehaviour
 {
-    [Header("Reference")]
+    [Header("------Reference------")]
     [SerializeField] private GachaManager gachaManager;
     [SerializeField] private FisingManager fishingManager;
     [SerializeField] private GameObject turboCanvas;
     [SerializeField] private int rarity;
 
-    [Header("UGUI")]
+    [Header("------UGUI------")]
     [SerializeField] private GameObject TURBOCam;
 
-    [Header("Timer")]
+    [Header("------Timer------")]
     [SerializeField] private Slider turboSlider;
     [SerializeField] private float sliderTime = 10f;
     [SerializeField] private float currentTime = 0f;
@@ -26,11 +26,14 @@ public class TurboManager : MonoBehaviour
     [SerializeField] private float plusValue;
     [SerializeField] private float minusValue;
 
+    private AudioSource turboAudioSource;
+
 
     // Start is called before the first frame update
     void Start()
     {
         resetTimer();
+        turboAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -42,6 +45,7 @@ public class TurboManager : MonoBehaviour
             turboCanvas.SetActive(true);
             rarity = gachaManager.fish.fishData.FishRarity.ToString().Length;
 
+            // [Difficulty]
             plusValue = plusWeight / rarity;
             minusValue = rarity * minusWeight;
             
@@ -54,6 +58,7 @@ public class TurboManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && fishingManager.shirokoPhase == fishingPhase.BLOCKTURBO)
         {
             currentTime += plusValue;
+            turboAudioSource.Play();
         }
     }
 

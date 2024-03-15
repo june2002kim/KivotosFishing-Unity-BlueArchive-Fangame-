@@ -6,22 +6,37 @@ using UnityEngine;
 
 public class GachaManager : MonoBehaviour
 {
-    [Header("References")]
+    [Header("------References------")]
     [SerializeField] private FisingManager fishingManager;
 
-    [Header("Fish Pool")]
+    [Header("------Fish Pool------")]
     [SerializeField] List<FishData> R_Fish;
     [SerializeField] List<FishData> SR_Fish;
     [SerializeField] List<FishData> SSR_Fish;
     [SerializeField] GameObject fishPrefab;
 
-    [Header("Rarity probability")]
-    [SerializeField] private int Rare = 755;
-    [SerializeField] private int SuperRare = 185;
-    [SerializeField] private int SuperSuperRare = 6;
+    [Header("------Rarity probability------")]
+    [SerializeField] private int Rare = 775;
+    [SerializeField] private int SuperRare = 165;
+    [SerializeField] private int SuperSuperRare = 60;
 
-    [Header("Fish")]
+    [Header("------Fish------")]
     [SerializeField] public Fish fish;
+
+    [Header("------System------")]
+    [SerializeField] public bool ceilingSys;
+    [SerializeField] private int ceilingMax;
+    [SerializeField] public int ceilingStack;
+    [SerializeField] public bool comboSys;
+    [SerializeField] public int comboCnt;
+    [SerializeField] private int Rset = 775;
+    [SerializeField] private int SRset = 165;
+    [SerializeField] private int SSRset = 60;
+
+    void Start()
+    {
+        ResetGacha();    
+    }
 
     void Update()
     {
@@ -63,6 +78,15 @@ public class GachaManager : MonoBehaviour
         int fishPick;
         FishData rtnData;
 
+        if(ceilingSys && ceilingStack >= ceilingMax)
+        {
+            // SSR
+            fishPick = Random.Range(0, SSR_Fish.Count);
+            rtnData = SSR_Fish[fishPick];
+
+            return rtnData;
+        }
+
         if(rarityPick <= SuperSuperRare)
         {
             // SSR
@@ -83,5 +107,37 @@ public class GachaManager : MonoBehaviour
         }
 
         return rtnData;
+    }
+
+    public void ResetGacha()
+    {
+        Rare = Rset;
+        SuperRare = SRset;
+        SuperSuperRare = SSRset;
+
+        comboCnt = 0;
+
+        ceilingMax = 11;
+        ceilingStack = 0;
+    }
+
+    public void ComboUp()
+    {
+        if(Rare > SSRset && SuperSuperRare < Rset)
+        {
+            comboCnt++;
+
+            Rare--;
+            SuperSuperRare++;
+        }
+    }
+
+    public void ComboDown()
+    {
+        Rare = Rset;
+        SuperRare = SRset;
+        SuperSuperRare = SSRset;
+
+        comboCnt = 0;
     }
 }

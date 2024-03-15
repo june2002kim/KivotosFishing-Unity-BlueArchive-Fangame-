@@ -7,20 +7,24 @@ using UnityEngine.UI;
 
 public class DBDManager : MonoBehaviour
 {
-    [Header("Reference")]
+    [Header("------Reference------")]
     [SerializeField] private GachaManager gachaManager;
     [SerializeField] private QTEManager qteManager;
     [SerializeField] private DBDAlignment dbdAlignment;
     [SerializeField] private FisingManager fishingManager;
     [SerializeField] private GameObject dbdCanvas;
 
-    [Header("UGUI")]
+    [Header("------UGUI------")]
     [SerializeField] private GameObject DBDCanvas;
     [SerializeField] private GameObject DBDcakePrefab;
     [SerializeField] private clockHand clockHand;
     [SerializeField] private GameObject DBDCam;
+
+    [Header("------Audio------")]
+    [SerializeField] private AudioClip goodClip;
+    [SerializeField] private AudioClip badClip;
     
-    [Header("Variables")]
+    [Header("------Variables------")]
     [SerializeField] private int cakeCount;
     [SerializeField] private float cakeRot;
     [SerializeField] private bool stopTimer;
@@ -30,6 +34,13 @@ public class DBDManager : MonoBehaviour
     [SerializeField] private float rotationAngle;
     [SerializeField] private float rotationWeight = 40f;
     [SerializeField] public bool isIn;
+
+    private AudioSource dbdAudioSource;
+
+    void Start()
+    {
+        dbdAudioSource = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -57,11 +68,17 @@ public class DBDManager : MonoBehaviour
             {
                 reverseTimer = true;
                 isIn = true;
+
+                dbdAudioSource.clip = goodClip;
             }
             else
             {
                 stopTimer = true;
+
+                dbdAudioSource.clip = badClip;
             }
+
+            dbdAudioSource.Play();
         }
     }
 
@@ -94,13 +111,14 @@ public class DBDManager : MonoBehaviour
             if(reverseTimer)
             {
                 index++;
-                arrowDirection = qteManager.arrowDirection[index] - 1;
 
                 if(index == cakeCount)
                 {
                     stopTimer = true;
                     break;
                 }
+                
+                arrowDirection = qteManager.arrowDirection[index] - 1;
 
                 reverseTimer = false;
             }
@@ -108,6 +126,7 @@ public class DBDManager : MonoBehaviour
             if(!stopTimer)
             {
                 rotationAngle += Time.deltaTime * arrowDirection;
+                // [Difficulty] clock rotation speed for each rarity
                 clockHand.transform.rotation = Quaternion.Euler(0, 0, rotationAngle * rotationWeight * cakeCount);
             }
         }

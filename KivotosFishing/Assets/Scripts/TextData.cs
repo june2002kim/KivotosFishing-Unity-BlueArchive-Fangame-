@@ -26,6 +26,7 @@ public class dialogueString
     [SerializeField] private bool isUnknown;
     public bool IsUnknown {get {return isUnknown;}}
 
+    // Emoji
     [SerializeField] private bool isUpEmoji;
     public bool IsUpEmoji {get {return isUpEmoji;}}
 
@@ -43,4 +44,11 @@ public class dialogueString
 
     [SerializeField] private GameObject downEmojiLocation;
     public GameObject DownEmojiLocation {get {return downEmojiLocation;}}
+
+    // Audio
+    [SerializeField] private bool isSinging;
+    public bool IsSinging {get {return isSinging;}}
+
+    [SerializeField] private AudioClip songClip;
+    public AudioClip SongClip {get {return songClip;}}
 }
