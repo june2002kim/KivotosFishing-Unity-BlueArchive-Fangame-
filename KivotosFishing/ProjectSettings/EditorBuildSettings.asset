@@ -6,19 +6,40 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Home.unity
+    path: Assets/Scenes/Game/Home.unity
     guid: e6b249b6b0cf4bf4699850b54a8552cb
   - enabled: 1
-    path: Assets/Scenes/OP.unity
+    path: Assets/Scenes/Game/OP.unity
     guid: 4db7165dccc17804691dfbb4070e9b7b
   - enabled: 1
-    path: Assets/Scenes/preTutorial.unity
+    path: Assets/Scenes/Tutorial/preTutorial.unity
     guid: 68d6639721f559b43b5af4b89fb17fa2
   - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
+    path: Assets/Scenes/Tutorial/Tutorial.unity
     guid: 97d20bf20e0e94d4395027396cff5879
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/postTutorial.unity
     guid: 3bc19650a6f894e4d8015307b27af8af
+  - enabled: 1
+    path: Assets/Scenes/Lake/preLake.unity
+    guid: 23d0d2c9454fa484ab2cd1269089105a
+  - enabled: 1
+    path: Assets/Scenes/Lake/Lake.unity
+    guid: e801008868398e04ea60eb7dbc21e60c
+  - enabled: 1
+    path: Assets/Scenes/Lake/postLake.unity
+    guid: 4059e2061b705bc489b688bba0832d5a
+  - enabled: 1
+    path: Assets/Scenes/Amazon/preAmazon.unity
+    guid: 9898cf23c89e54e46856dea5c3750059
+  - enabled: 1
+    path: Assets/Scenes/Amazon/Amazon.unity
+    guid: 4cbd213d7a1c87d4d8a794077b3c309a
+  - enabled: 1
+    path: Assets/Scenes/Amazon/postAmazon.unity
+    guid: 21098049750ddbe4c866813effe48fbc
+  - enabled: 1
+    path: Assets/Scenes/Sea/preSea.unity
+    guid: 4c874a08393db084fb9121a361fd712b
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: bdff1985d3a340941b81269a72c412d8, type: 2}
