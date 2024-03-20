@@ -20,6 +20,9 @@ public class TutorialManager : MonoBehaviour
 
     private AudioSource audioSource;
 
+    // timeKeeper
+    WaitForSecondsRealtime realsecEpsilon = new WaitForSecondsRealtime(math.EPSILON);
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -77,7 +80,8 @@ public class TutorialManager : MonoBehaviour
             goalAlpha+=0.05f;
             //Debug.Log("alpha changed");
 
-            yield return new WaitForSecondsRealtime(math.EPSILON);
+            //yield return new WaitForSecondsRealtime(math.EPSILON);
+            yield return realsecEpsilon;
         }
 
         //Debug.Log("start waiting");

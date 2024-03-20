@@ -100,7 +100,7 @@ public class MiyuGachaMan : MonoBehaviour
 
         comboCnt = 0;
 
-        ceilingMax = 11;
+        ceilingMax = 8;
         ceilingStack = 0;
     }
 

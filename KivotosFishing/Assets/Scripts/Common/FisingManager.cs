@@ -91,6 +91,9 @@ public class FisingManager : MonoBehaviour
     public Animator shirokoAnimator;
     private AudioSource shirokoAudioSource;
 
+    // timeKeeper
+    WaitForSeconds secEpsilon = new WaitForSeconds(Unity.Mathematics.math.EPSILON);
+
     private void Awake()
     {
         shirokoAnimator = GetComponent<Animator>();
@@ -382,7 +385,9 @@ public class FisingManager : MonoBehaviour
         while (!stopTimer)
         {
             timerTime -= Time.deltaTime;
-            yield return new WaitForSeconds(Unity.Mathematics.math.EPSILON);
+            
+            //yield return new WaitForSeconds(Unity.Mathematics.math.EPSILON);
+            yield return secEpsilon;
 
             if (timerTime <= 0)
             {

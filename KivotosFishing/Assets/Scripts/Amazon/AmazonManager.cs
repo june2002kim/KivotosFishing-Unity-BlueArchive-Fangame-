@@ -51,6 +51,10 @@ public class AmazonManager : MonoBehaviour
 
     private AudioSource audioSource;
 
+    // timeKeeper
+    WaitForSeconds secEpsilon = new WaitForSeconds(math.EPSILON);
+    WaitForSecondsRealtime realsecEpsilon = new WaitForSecondsRealtime(math.EPSILON);
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -112,7 +116,8 @@ public class AmazonManager : MonoBehaviour
             goalAlpha += 0.05f;
             //Debug.Log("alpha changed");
 
-            yield return new WaitForSecondsRealtime(math.EPSILON);
+            //yield return new WaitForSecondsRealtime(math.EPSILON);
+            yield return realsecEpsilon;
         }
 
         //Debug.Log("start waiting");
@@ -131,7 +136,7 @@ public class AmazonManager : MonoBehaviour
 
     private void ResetTimer()
     {
-        amazonMaxTime = 30f;
+        amazonMaxTime = 360f;
         amazonTimer.maxValue = amazonMaxTime;
         currentTime = amazonMaxTime;
         stopTimer = false;
@@ -142,7 +147,9 @@ public class AmazonManager : MonoBehaviour
         while (!stopTimer)
         {
             currentTime -= Time.deltaTime;
-            yield return new WaitForSeconds(math.EPSILON);
+
+            //yield return new WaitForSeconds(math.EPSILON);
+            yield return secEpsilon;
 
             if (currentTime <= amazonMaxTime * 0.1f && !speedAudioUp)
             {

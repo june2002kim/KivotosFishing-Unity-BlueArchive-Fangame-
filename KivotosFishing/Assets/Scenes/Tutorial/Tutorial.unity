@@ -1712,6 +1712,8 @@ MonoBehaviour:
   turboCanvas: {fileID: 1802611702}
   rarity: 0
   TURBOCam: {fileID: 5540517}
+  TURBOCam_: {fileID: 0}
+  sliderTransform_: {fileID: 0}
   turboSlider: {fileID: 752441697}
   sliderTime: 10
   currentTime: 0
@@ -8091,6 +8093,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lakeManager: {fileID: 0}
   amazonManager: {fileID: 0}
+  finManager: {fileID: 0}
 --- !u!1 &544037828
 GameObject:
   m_ObjectHideFlags: 0
@@ -11811,6 +11814,8 @@ MonoBehaviour:
   DBDcakePrefab: {fileID: 7285481254479034627, guid: 44fb7ddfcb5d9724fa99a04a4c057055, type: 3}
   clockHand: {fileID: 811311763}
   DBDCam: {fileID: 1054549670}
+  DBDCam_: {fileID: 0}
+  panelTransform_: {fileID: 0}
   goodClip: {fileID: 8300000, guid: a7b5fd4dbb28f634fa5ef77d34d150d4, type: 3}
   badClip: {fileID: 8300000, guid: 00a0ecd8c495dd64b8009fd14c6806ec, type: 3}
   cakeCount: 0
@@ -19640,17 +19645,20 @@ MonoBehaviour:
   gachaManager: {fileID: 1665825641}
   qteAlignment: {fileID: 0}
   fishingManager: {fileID: 1635743565}
-  qteCanvas: {fileID: 1671326610}
+  QTECanvas: {fileID: 1671326610}
   arrowDirection: 0000000000000000000000000000000000000000
   isWatingQTE: 0
   keyCount: 0
   leftRight: 0
   index: 0
   isFailed: 0
-  QTECanvas: {fileID: 1671326610}
+  qteCanvas: {fileID: 1671326610}
   KeyPanel: {fileID: 64555656}
   TimerPanel: {fileID: 1788019901}
   QTECam: {fileID: 1207626251}
+  QTECam_: {fileID: 0}
+  keyTransform_: {fileID: 0}
+  timerTransform_: {fileID: 0}
   timerSlider: {fileID: 1783804143}
   sliderTime: 3
   currentTime: 0
@@ -28448,6 +28456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gachaManager: {fileID: 1665825641}
+  penguinSpawner: {fileID: 0}
   shirokoPhase: 0
   gachaRate: 0
   minGachaRate: 2
@@ -28456,6 +28465,9 @@ MonoBehaviour:
   QTECam: {fileID: 1207626251}
   DBDCam: {fileID: 1054549670}
   TURBOCam: {fileID: 5540517}
+  QTECam_: {fileID: 0}
+  DBDCam_: {fileID: 0}
+  TURBOCam_: {fileID: 0}
   emojiAboveLocation: {fileID: 2053278885}
   surpriseEmoji: {fileID: 953835761}
   heartEmoji: {fileID: 101464340, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
@@ -28463,11 +28475,17 @@ MonoBehaviour:
   emojiBelowLocation: {fileID: 1458062986}
   sweatEmoji: {fileID: -2093801267, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
   comboText: {fileID: 945367113}
+  player: {fileID: 0}
+  rightLocation: {fileID: 0}
+  leftLocation: {fileID: 0}
+  isFacingRight: 1
   heartClip: {fileID: 8300000, guid: 6a57162c445fb9e47bea11b4abe1f2c9, type: 3}
   sweatClip: {fileID: 8300000, guid: 23f08b231b4f11444b60faf0417f0f09, type: 3}
   castingClip: {fileID: 8300000, guid: 1f81646497a95ef4f98c08397129de84, type: 3}
   reelingClip: {fileID: 8300000, guid: f040333c3aa31404b869e3d22ca43165, type: 3}
   tryAgainPanel: {fileID: 1025935144}
+  hearts: []
+  sweats: []
   shirokoAnimator: {fileID: 0}
 --- !u!95 &1635743566
 Animator:
@@ -29132,50 +29150,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ec12b72273aaa2e42bbb5723bfffd22e, type: 2}
   - {fileID: 11400000, guid: cf990b469af5bf545929e5727409e697, type: 2}
   - {fileID: 11400000, guid: 3dde7fd5d1962a04a9f6ca150bffbac6, type: 2}
-  - {fileID: 11400000, guid: 942ab8a21c3b74f4bb83dfc22d6e05f8, type: 2}
-  - {fileID: 11400000, guid: a4cd5da69699d2346bd80aeeeac79d7a, type: 2}
-  - {fileID: 11400000, guid: 97f40163d1f9ba9429b5851cd517d96c, type: 2}
-  - {fileID: 11400000, guid: a6232e8cc68a1c44fbb38ce421e30950, type: 2}
-  - {fileID: 11400000, guid: ebca3ece20747d043b8196a00b08612c, type: 2}
-  - {fileID: 11400000, guid: 6ffae40bc26246a4cac9cef78b6d245a, type: 2}
-  - {fileID: 11400000, guid: 62b2eec00e7e4ae4584a49c3d258fbda, type: 2}
-  - {fileID: 11400000, guid: 15c64f574dfc32243873744ded7a0883, type: 2}
-  - {fileID: 11400000, guid: 207f921197c3f9a4d9b38ed5b45419e4, type: 2}
-  - {fileID: 11400000, guid: 8b2884b4431b88748a44480d843a1604, type: 2}
-  - {fileID: 11400000, guid: b86971858dde0b943b6dda8019170f5d, type: 2}
-  - {fileID: 11400000, guid: 2d5c3cdb65ac3dc47a5e00db043df642, type: 2}
-  - {fileID: 11400000, guid: 19d003c9c280efe49802c28fd0c7047d, type: 2}
-  - {fileID: 11400000, guid: e9fe60d6fa1d5494eb2ee78d679c57c1, type: 2}
-  - {fileID: 11400000, guid: 4a7375e1509c67447941e3b713b34ea0, type: 2}
-  - {fileID: 11400000, guid: f15c605836ece9646b86567a21ce9eab, type: 2}
   SR_Fish:
   - {fileID: 11400000, guid: 066b6b5acd7bd4044ac128f8ac2dcc8a, type: 2}
-  - {fileID: 11400000, guid: c375c409ce394e24db136be119214f20, type: 2}
   - {fileID: 11400000, guid: 4021370ed10d75942a1fb575cf0a6da7, type: 2}
-  - {fileID: 11400000, guid: 0e9f17539e73bdb4daa9e5818bb11d74, type: 2}
-  - {fileID: 11400000, guid: 6080e5c3adf58ea4d9e74e22027a3468, type: 2}
-  - {fileID: 11400000, guid: b16daa27278fec04486a6476d080bd4f, type: 2}
-  - {fileID: 11400000, guid: 849fe12617520754da6953a94a0212f5, type: 2}
-  - {fileID: 11400000, guid: 24eea37fa7c58b34ab08a8b58b5fd4c2, type: 2}
-  - {fileID: 11400000, guid: 1779d82503ef3cc498eec99d72377fbe, type: 2}
-  - {fileID: 11400000, guid: a93341709adab8c4ca504f37771c5f7b, type: 2}
-  - {fileID: 11400000, guid: 8a6446bc4091b664d8709421e2b2d16c, type: 2}
-  - {fileID: 11400000, guid: b8802c4e1f253b34398c390560ecfe5a, type: 2}
   SSR_Fish:
-  - {fileID: 11400000, guid: 1a0b14dad93a1ec44af8e2dc27c31a22, type: 2}
   - {fileID: 11400000, guid: 0bf4abd3708360341989a561ad471e93, type: 2}
   - {fileID: 11400000, guid: 9d7aafdb042ef5e4dae099bd5b9461fa, type: 2}
-  - {fileID: 11400000, guid: dce78cb78a417df4d8c006c5179972b8, type: 2}
-  - {fileID: 11400000, guid: 9ab892a75d759204eaeb47976d1de5af, type: 2}
-  - {fileID: 11400000, guid: 8e4376167c3a4274f9bbee8a13e236e5, type: 2}
-  - {fileID: 11400000, guid: 95b439c0a1ca7404386eeb8917b39e5b, type: 2}
-  - {fileID: 11400000, guid: 5aacc816a6a7c63409d0501b44e67ead, type: 2}
-  - {fileID: 11400000, guid: f9f24a478858dbb4c9795810c34d0120, type: 2}
-  - {fileID: 11400000, guid: 871d546158fce43469b2bbd8a2f651ac, type: 2}
-  - {fileID: 11400000, guid: 3b00517c1ba265947820a5a34806c317, type: 2}
-  - {fileID: 11400000, guid: a3444ae94e2dd724abb4805bc93c2d60, type: 2}
-  - {fileID: 11400000, guid: 2a0326627a8ff364bad119f96d167304, type: 2}
-  - {fileID: 11400000, guid: 324080fc7fda7a2478175df042fe3b2d, type: 2}
+  SUSHI_Fish: []
   fishPrefab: {fileID: 785177163068995144, guid: faabdf53e1bfeee4e8dc96fd7c09d976, type: 3}
   Rare: 775
   SuperRare: 165
@@ -30623,10 +30604,12 @@ MonoBehaviour:
   fishingManager: {fileID: 1635743565}
   shirokoAudioSource: {fileID: 1635743568}
   fish: {fileID: 973943864}
+  fish_: {fileID: 0}
   particleSystem: {fileID: 920910596}
   starClip: {fileID: 8300000, guid: 410fe7fe1f1764c4ebfc7cbb9ef46cea, type: 3}
   totalCnt: 0
   totalScore: 0
+  fishName: 
 --- !u!1 &1730544818
 GameObject:
   m_ObjectHideFlags: 0

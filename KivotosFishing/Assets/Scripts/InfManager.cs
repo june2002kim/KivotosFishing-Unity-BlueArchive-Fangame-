@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Mathematics;
-using UnityEditor.Animations;
+//using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -22,8 +22,13 @@ public class InfManager : MonoBehaviour
     [Header("------UGUI------")]
     [SerializeField] private TextMeshProUGUI caughtCnt;
 
+    // timeKeeper
+    WaitForSecondsRealtime realsecEpsilon = new WaitForSecondsRealtime(math.EPSILON);
+
     void Start()
     {
+        PlayerPrefs.SetInt("hasCleared", PlayerPrefs.GetInt("hasCleared", 0) + 1);
+        
         StartCoroutine(ShowGoal());
     }
 
@@ -52,7 +57,8 @@ public class InfManager : MonoBehaviour
             goalAlpha += 0.05f;
             //Debug.Log("alpha changed");
 
-            yield return new WaitForSecondsRealtime(math.EPSILON);
+            //yield return new WaitForSecondsRealtime(math.EPSILON);
+            yield return realsecEpsilon;
         }
 
         //Debug.Log("start waiting");

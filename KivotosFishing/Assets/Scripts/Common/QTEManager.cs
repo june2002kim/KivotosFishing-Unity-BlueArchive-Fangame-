@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.Mathematics;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -46,6 +46,9 @@ public class QTEManager : MonoBehaviour
     [SerializeField] private AudioClip badClip;
 
     private AudioSource qteAudioSource;
+
+    // timeKeeper
+    WaitForSeconds secEpsilon = new WaitForSeconds(Unity.Mathematics.math.EPSILON);
 
 
     void Start()
@@ -229,7 +232,9 @@ public class QTEManager : MonoBehaviour
         while(!stopTimer)
         {
             currentTime -= Time.deltaTime;
-            yield return new WaitForSeconds(math.EPSILON);
+
+            //yield return new WaitForSeconds(math.EPSILON);
+            yield return secEpsilon;
 
             if(currentTime <= 0)
             {

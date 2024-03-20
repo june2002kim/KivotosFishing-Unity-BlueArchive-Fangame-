@@ -1731,6 +1731,8 @@ MonoBehaviour:
   turboCanvas: {fileID: 1802611702}
   rarity: 0
   TURBOCam: {fileID: 5540517}
+  TURBOCam_: {fileID: 0}
+  sliderTransform_: {fileID: 0}
   turboSlider: {fileID: 752441697}
   sliderTime: 10
   currentTime: 0
@@ -14305,6 +14307,8 @@ MonoBehaviour:
   DBDcakePrefab: {fileID: 7285481254479034627, guid: 44fb7ddfcb5d9724fa99a04a4c057055, type: 3}
   clockHand: {fileID: 811311763}
   DBDCam: {fileID: 1054549670}
+  DBDCam_: {fileID: 0}
+  panelTransform_: {fileID: 0}
   goodClip: {fileID: 8300000, guid: a7b5fd4dbb28f634fa5ef77d34d150d4, type: 3}
   badClip: {fileID: 8300000, guid: 00a0ecd8c495dd64b8009fd14c6806ec, type: 3}
   cakeCount: 0
@@ -20010,17 +20014,20 @@ MonoBehaviour:
   gachaManager: {fileID: 1665825641}
   qteAlignment: {fileID: 0}
   fishingManager: {fileID: 1635743565}
-  qteCanvas: {fileID: 1671326610}
+  QTECanvas: {fileID: 1671326610}
   arrowDirection: 0000000000000000000000000000000000000000
   isWatingQTE: 0
   keyCount: 0
   leftRight: 0
   index: 0
   isFailed: 0
-  QTECanvas: {fileID: 1671326610}
+  qteCanvas: {fileID: 1671326610}
   KeyPanel: {fileID: 64555656}
   TimerPanel: {fileID: 1788019901}
   QTECam: {fileID: 1207626251}
+  QTECam_: {fileID: 0}
+  keyTransform_: {fileID: 0}
+  timerTransform_: {fileID: 0}
   timerSlider: {fileID: 1783804143}
   sliderTime: 3
   currentTime: 0
@@ -29030,6 +29037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gachaManager: {fileID: 1665825641}
+  penguinSpawner: {fileID: 0}
   shirokoPhase: 0
   gachaRate: 0
   minGachaRate: 2
@@ -29038,6 +29046,9 @@ MonoBehaviour:
   QTECam: {fileID: 1207626251}
   DBDCam: {fileID: 1054549670}
   TURBOCam: {fileID: 5540517}
+  QTECam_: {fileID: 0}
+  DBDCam_: {fileID: 0}
+  TURBOCam_: {fileID: 0}
   emojiAboveLocation: {fileID: 2053278885}
   surpriseEmoji: {fileID: 953835761}
   heartEmoji: {fileID: 101464340, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
@@ -29045,11 +29056,17 @@ MonoBehaviour:
   emojiBelowLocation: {fileID: 1458062986}
   sweatEmoji: {fileID: -2093801267, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
   comboText: {fileID: 1122215336}
+  player: {fileID: 0}
+  rightLocation: {fileID: 0}
+  leftLocation: {fileID: 0}
+  isFacingRight: 1
   heartClip: {fileID: 8300000, guid: 6a57162c445fb9e47bea11b4abe1f2c9, type: 3}
   sweatClip: {fileID: 8300000, guid: 23f08b231b4f11444b60faf0417f0f09, type: 3}
   castingClip: {fileID: 8300000, guid: 1f81646497a95ef4f98c08397129de84, type: 3}
   reelingClip: {fileID: 8300000, guid: f040333c3aa31404b869e3d22ca43165, type: 3}
   tryAgainPanel: {fileID: 0}
+  hearts: []
+  sweats: []
   shirokoAnimator: {fileID: 0}
 --- !u!95 &1635743566
 Animator:
@@ -29396,20 +29413,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 97f40163d1f9ba9429b5851cd517d96c, type: 2}
   SR_Fish:
   - {fileID: 11400000, guid: 066b6b5acd7bd4044ac128f8ac2dcc8a, type: 2}
-  - {fileID: 11400000, guid: c375c409ce394e24db136be119214f20, type: 2}
   - {fileID: 11400000, guid: 4021370ed10d75942a1fb575cf0a6da7, type: 2}
   - {fileID: 11400000, guid: 0e9f17539e73bdb4daa9e5818bb11d74, type: 2}
   - {fileID: 11400000, guid: 6080e5c3adf58ea4d9e74e22027a3468, type: 2}
   - {fileID: 11400000, guid: b16daa27278fec04486a6476d080bd4f, type: 2}
   SSR_Fish:
-  - {fileID: 11400000, guid: 1a0b14dad93a1ec44af8e2dc27c31a22, type: 2}
-  - {fileID: 11400000, guid: 0bf4abd3708360341989a561ad471e93, type: 2}
-  - {fileID: 11400000, guid: 9d7aafdb042ef5e4dae099bd5b9461fa, type: 2}
-  - {fileID: 11400000, guid: dce78cb78a417df4d8c006c5179972b8, type: 2}
   - {fileID: 11400000, guid: 9ab892a75d759204eaeb47976d1de5af, type: 2}
   - {fileID: 11400000, guid: 8e4376167c3a4274f9bbee8a13e236e5, type: 2}
   - {fileID: 11400000, guid: 95b439c0a1ca7404386eeb8917b39e5b, type: 2}
   - {fileID: 11400000, guid: 5aacc816a6a7c63409d0501b44e67ead, type: 2}
+  SUSHI_Fish: []
   fishPrefab: {fileID: 785177163068995144, guid: faabdf53e1bfeee4e8dc96fd7c09d976, type: 3}
   Rare: 775
   SuperRare: 165
@@ -30548,6 +30561,7 @@ MonoBehaviour:
   fishingManager: {fileID: 1635743565}
   shirokoAudioSource: {fileID: 1635743568}
   fish: {fileID: 973943864}
+  fish_: {fileID: 0}
   particleSystem: {fileID: 920910596}
   starClip: {fileID: 8300000, guid: 410fe7fe1f1764c4ebfc7cbb9ef46cea, type: 3}
   totalCnt: 0
@@ -33277,6 +33291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lakeManager: {fileID: 0}
   amazonManager: {fileID: 0}
+  finManager: {fileID: 0}
 --- !u!82 &1892956438
 AudioSource:
   m_ObjectHideFlags: 0
@@ -37972,8 +37987,8 @@ MonoBehaviour:
   tadaClip: {fileID: 8300000, guid: 525b6b337804edd4aa411a19c79b7f65, type: 3}
   stopFishing: 0
   resultIdx: 0
-  hanakoGood: 1
-  hanakoBad: 2
+  hanakoGood: 15
+  hanakoBad: 40
   isSeaFinished: 0
   isHaniwaCaught: 0
 --- !u!1001 &5237515976375729426

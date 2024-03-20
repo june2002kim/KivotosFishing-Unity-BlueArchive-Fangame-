@@ -63,6 +63,10 @@ public class EDManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("hasCleared", PlayerPrefs.GetInt("hasCleared", 0) + 1);
         }
+        else
+        {
+            PlayerPrefs.SetInt("hasCleared", 1);
+        }
 
         yield return new WaitForSeconds(4f);
 

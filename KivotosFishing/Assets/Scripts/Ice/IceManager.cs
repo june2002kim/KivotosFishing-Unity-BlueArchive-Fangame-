@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Mathematics;
-using UnityEditor.Animations;
+//using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -28,6 +28,9 @@ public class IceManager : MonoBehaviour
     [SerializeField] private AudioClip loseClip;
 
     private AudioSource audioSource;
+
+    // timeKeeper
+    WaitForSecondsRealtime realsecEpsilon = new WaitForSecondsRealtime(math.EPSILON);
 
     void Start()
     {
@@ -82,7 +85,8 @@ public class IceManager : MonoBehaviour
             goalAlpha += 0.05f;
             //Debug.Log("alpha changed");
 
-            yield return new WaitForSecondsRealtime(math.EPSILON);
+            //yield return new WaitForSecondsRealtime(math.EPSILON);
+            yield return realsecEpsilon;
         }
 
         //Debug.Log("start waiting");

@@ -19,6 +19,9 @@ public class Penguin : MonoBehaviour
 
     private Animator animator;
     private Slider slider;
+
+    // timeKeeper
+    WaitForSeconds secEpsilon = new WaitForSeconds(math.EPSILON);
     
     void Start()
     {
@@ -45,7 +48,8 @@ public class Penguin : MonoBehaviour
         {
             this.transform.position += Vector3.left * Time.deltaTime;
 
-            yield return new WaitForSeconds(math.EPSILON);
+            //yield return new WaitForSeconds(math.EPSILON);
+            yield return secEpsilon;
         }
 
         animator.SetBool("isWalking", false);
@@ -72,7 +76,8 @@ public class Penguin : MonoBehaviour
         {
             this.transform.position += Vector3.left * Time.deltaTime;
 
-            yield return new WaitForSeconds(math.EPSILON);
+            //yield return new WaitForSeconds(math.EPSILON);
+            yield return secEpsilon;
         }
 
         this.gameObject.SetActive(false);
@@ -92,7 +97,8 @@ public class Penguin : MonoBehaviour
         {
             this.transform.position += Vector3.left * Time.deltaTime;
 
-            yield return new WaitForSeconds(math.EPSILON);
+            //yield return new WaitForSeconds(math.EPSILON);
+            yield return secEpsilon;
         }
 
         this.gameObject.SetActive(false);
@@ -100,7 +106,7 @@ public class Penguin : MonoBehaviour
 
     private void ResetTimer()
     {
-        penguinMaxTime = 16f;
+        penguinMaxTime = 12f;
         currentTime = penguinMaxTime;
         slider.maxValue = currentTime;
         stopTimer = false;

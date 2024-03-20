@@ -42,6 +42,9 @@ public class DBDManager : MonoBehaviour
 
     private AudioSource dbdAudioSource;
 
+    // timeKeeper
+    WaitForSeconds secEpsilon = new WaitForSeconds(math.EPSILON);
+
     void Start()
     {
         dbdAudioSource = GetComponent<AudioSource>();
@@ -134,7 +137,8 @@ public class DBDManager : MonoBehaviour
         while(!stopTimer)
         {
             
-            yield return new WaitForSeconds(math.EPSILON);
+            //yield return new WaitForSeconds(math.EPSILON);
+            yield return secEpsilon;
 
             if(reverseTimer)
             {

@@ -42,6 +42,10 @@ public class LakeManager : MonoBehaviour
 
     private AudioSource audioSource;
 
+    // timeKeeper
+    WaitForSeconds secEpsilon = new WaitForSeconds(math.EPSILON);
+    WaitForSecondsRealtime realsecEpsilon = new WaitForSecondsRealtime(math.EPSILON);
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -92,7 +96,8 @@ public class LakeManager : MonoBehaviour
             goalAlpha+=0.05f;
             Debug.Log("alpha changed");
 
-            yield return new WaitForSecondsRealtime(math.EPSILON);
+            //yield return new WaitForSecondsRealtime(math.EPSILON);
+            yield return realsecEpsilon;
         }
 
         Debug.Log("start waiting");
@@ -111,7 +116,7 @@ public class LakeManager : MonoBehaviour
 
     private void ResetTimer()
     {
-        lakeMaxTime = 30f;
+        lakeMaxTime = 360f;
         lakeTimer.maxValue = lakeMaxTime;
         currentTime = lakeMaxTime;
         stopTimer = false;
@@ -122,7 +127,9 @@ public class LakeManager : MonoBehaviour
         while(!stopTimer)
         {
             currentTime -= Time.deltaTime;
-            yield return new WaitForSeconds(math.EPSILON);
+
+            //yield return new WaitForSeconds(math.EPSILON);
+            yield return secEpsilon;
 
             if(currentTime <= lakeMaxTime * 0.1f && !speedAudioUp)
             {
@@ -194,7 +201,8 @@ public class LakeManager : MonoBehaviour
                 miyuCount+=10;
             }
 
-            yield return new WaitForSeconds(math.EPSILON);
+            //yield return new WaitForSeconds(math.EPSILON);
+            yield return secEpsilon;
         }
 
         yield return new WaitForSeconds(1.5f);

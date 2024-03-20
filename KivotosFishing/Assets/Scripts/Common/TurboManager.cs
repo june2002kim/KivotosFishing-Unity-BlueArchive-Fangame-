@@ -35,15 +35,15 @@ public class TurboManager : MonoBehaviour
 
     private AudioSource turboAudioSource;
 
+    // timeKeeper
+    WaitForSeconds secEpsilon = new WaitForSeconds(Unity.Mathematics.math.EPSILON);
 
-    // Start is called before the first frame update
     void Start()
     {
         resetTimer();
         turboAudioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(fishingManager.shirokoPhase == fishingPhase.ENTERTURBO)
@@ -113,7 +113,9 @@ public class TurboManager : MonoBehaviour
         while(!stopTimer)
         {
             currentTime -= Time.deltaTime * minusValue;
-            yield return new WaitForSeconds(math.EPSILON);
+
+            // yield return new WaitForSeconds(math.EPSILON);
+            yield return secEpsilon;
 
             if(currentTime <= 0 || currentTime >= sliderTime)
             {

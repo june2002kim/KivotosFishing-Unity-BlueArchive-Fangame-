@@ -43,6 +43,10 @@ public class FinManager : MonoBehaviour
 
     private AudioSource audioSource;
 
+    // timeKeeper
+    WaitForSeconds secEpsilon = new WaitForSeconds(math.EPSILON);
+    WaitForSecondsRealtime realsecEpsilon = new WaitForSecondsRealtime(math.EPSILON);
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -109,7 +113,8 @@ public class FinManager : MonoBehaviour
             goalAlpha += 0.05f;
             //Debug.Log("alpha changed");
 
-            yield return new WaitForSecondsRealtime(math.EPSILON);
+            //yield return new WaitForSecondsRealtime(math.EPSILON);
+            yield return realsecEpsilon;
         }
 
         //Debug.Log("start waiting");
@@ -128,7 +133,7 @@ public class FinManager : MonoBehaviour
 
     private void ResetTimer()
     {
-        finMaxTime = 30f;
+        finMaxTime = 360f;
         finTimer.maxValue = finMaxTime;
         currentTime = finMaxTime;
         stopTimer = false;
@@ -139,7 +144,9 @@ public class FinManager : MonoBehaviour
         while (!stopTimer)
         {
             currentTime -= Time.deltaTime;
-            yield return new WaitForSeconds(math.EPSILON);
+
+            //yield return new WaitForSeconds(math.EPSILON);
+            yield return secEpsilon;
 
             if (currentTime <= finMaxTime * 0.1f && !speedAudioUp)
             {

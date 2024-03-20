@@ -94,14 +94,18 @@ public class HomeManager : MonoBehaviour
     IEnumerator ShowBlockPanel()
     {
         blockPanel.SetActive(true);
+
         yield return new WaitForSeconds(3.5f);
+
         blockPanel.SetActive(false);
     }
 
     IEnumerator ShowUnlockPanel()
     {
         unlockPanel.SetActive(true);
+
         yield return new WaitForSeconds(3.5f);
+
         unlockPanel.SetActive(false);
     }
 }
