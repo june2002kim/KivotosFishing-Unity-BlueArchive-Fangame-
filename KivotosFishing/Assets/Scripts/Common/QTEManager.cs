@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.Mathematics;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class QTEManager : MonoBehaviour
@@ -12,7 +14,7 @@ public class QTEManager : MonoBehaviour
     [SerializeField] private GachaManager gachaManager;
     [SerializeField] private QTEAlignment qteAlignment;
     [SerializeField] private FisingManager fishingManager;
-    [SerializeField] private GameObject qteCanvas;
+    [SerializeField] public GameObject QTECanvas;
 
     [Header("------variables------")]
     [SerializeField] public int[] arrowDirection = new int[5];
@@ -23,10 +25,15 @@ public class QTEManager : MonoBehaviour
     [SerializeField] private bool isFailed;
 
     [Header("------UGUI------")]
-    [SerializeField] public GameObject QTECanvas;
+    [SerializeField] public GameObject qteCanvas;
     [SerializeField] private GameObject KeyPanel;
     [SerializeField] private GameObject TimerPanel;
     [SerializeField] private GameObject QTECam;
+    
+    [Header("------MIRROR------")]
+    [SerializeField] private GameObject QTECam_;
+    [SerializeField] private RectTransform keyTransform_;
+    [SerializeField] private RectTransform timerTransform_;
 
     [Header("------Timer------")]
     [SerializeField] private Slider timerSlider;
@@ -55,7 +62,34 @@ public class QTEManager : MonoBehaviour
     {
         if (!isWatingQTE && fishingManager.shirokoPhase == fishingPhase.ENTERQTE)
         {
-            QTECam.SetActive(true);
+            if(SceneManager.GetActiveScene().name == "Ice")
+            {
+                if(fishingManager.isFacingRight)
+                {
+                    QTECam.SetActive(true);
+                    
+                    keyTransform_.offsetMax = Vector2.zero;
+                    timerTransform_.offsetMax = Vector2.zero;
+
+                    keyTransform_.offsetMin = new Vector2(300, 0);
+                    timerTransform_.offsetMin = new Vector2(300, 0);
+                }
+                else
+                {
+                    QTECam_.SetActive(true);
+                    
+                    keyTransform_.offsetMin = Vector2.zero;
+                    timerTransform_.offsetMin = Vector2.zero;
+
+                    keyTransform_.offsetMax = new Vector2(-300, 0);
+                    timerTransform_.offsetMax = new Vector2(-300, 0);
+                }
+            }
+            else
+            {
+                QTECam.SetActive(true);
+            }
+            
             qteCanvas.SetActive(true);
             StartCoroutine(StartQTE());
             fishingManager.shirokoPhase = fishingPhase.BLOCKQTE;

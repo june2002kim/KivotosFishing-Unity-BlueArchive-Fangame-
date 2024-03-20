@@ -28,6 +28,7 @@ public class FisingManager : MonoBehaviour
 {
     [Header("------References------")]
     [SerializeField] private GachaManager gachaManager;
+    [SerializeField] private PenguinSpawner penguinSpawner;
 
     [Header("------Variables------")]
     public fishingPhase shirokoPhase;
@@ -48,6 +49,9 @@ public class FisingManager : MonoBehaviour
     [SerializeField] private GameObject QTECam;
     [SerializeField] private GameObject DBDCam;
     [SerializeField] private GameObject TURBOCam;
+    [SerializeField] private GameObject QTECam_;
+    [SerializeField] private GameObject DBDCam_;
+    [SerializeField] private GameObject TURBOCam_;
 
     [Header("------Emoji------")]
     [SerializeField] public GameObject emojiAboveLocation;
@@ -60,6 +64,12 @@ public class FisingManager : MonoBehaviour
     [Header("------Combo------")]
     [SerializeField] private TextMeshPro comboText;
 
+    [Header("------Mirror------")]
+    [SerializeField] private GameObject player;
+    [SerializeField] private Transform rightLocation;
+    [SerializeField] private Transform leftLocation;
+    public bool isFacingRight = true;
+
     [Header("------Audio------")]
     [SerializeField] private AudioClip heartClip;
     [SerializeField] private AudioClip sweatClip;
@@ -68,6 +78,10 @@ public class FisingManager : MonoBehaviour
 
     [Header("------Tutorial------")]
     [SerializeField] private GameObject tryAgainPanel;
+
+    [Header("------Fin------")]
+    [SerializeField] private GameObject[] hearts;
+    [SerializeField] private GameObject[] sweats;
 
     private float currTime;
     private float timerTime;
@@ -164,6 +178,37 @@ public class FisingManager : MonoBehaviour
                 }
             }
         }
+
+        if(SceneManager.GetActiveScene().name == "Ice")
+        {
+            if(shirokoPhase == fishingPhase.BLOCKCASTING || shirokoPhase == fishingPhase.TALKING)
+            {
+                // Block Input
+            }
+            else if(shirokoPhase == fishingPhase.BEFORECASTING && !skipAnimation)
+            {
+                if(Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    isFacingRight = false;
+                    player.transform.localScale = new Vector3(-1, 1, 0);
+                    player.transform.position = leftLocation.position;
+                }
+                else if(Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    isFacingRight = true;
+                    player.transform.localScale = new Vector3(1, 1, 0);
+                    player.transform.position = rightLocation.position;
+                }
+            }
+        }
+
+        if(SceneManager.GetActiveScene().name == "Ice")
+        {
+            if(penguinSpawner.penguins[penguinSpawner.penguinIdx].GetComponent<Penguin>().isAngry)
+            {
+                penguinSpawner.SpawnPenguin();
+            }
+        }
     }
 
     public float SetGachaRate()
@@ -173,9 +218,18 @@ public class FisingManager : MonoBehaviour
 
     public void resetPhase()
     {
-        QTECam.SetActive(false);
-        DBDCam.SetActive(false);
-        TURBOCam.SetActive(false);
+        if(isFacingRight)
+        {
+            QTECam.SetActive(false);
+            DBDCam.SetActive(false);
+            TURBOCam.SetActive(false);
+        }
+        else
+        {
+            QTECam_.SetActive(false);
+            DBDCam_.SetActive(false);
+            TURBOCam_.SetActive(false);
+        }
 
         resetAnimBool();
         shirokoPhase = fishingPhase.BEFORECASTING;
@@ -199,9 +253,18 @@ public class FisingManager : MonoBehaviour
 
     public IEnumerator HappyFishing()
     {
-        QTECam.SetActive(false);
-        DBDCam.SetActive(false);
-        TURBOCam.SetActive(false);
+        if(isFacingRight)
+        {
+            QTECam.SetActive(false);
+            DBDCam.SetActive(false);
+            TURBOCam.SetActive(false);
+        }
+        else
+        {
+            QTECam_.SetActive(false);
+            DBDCam_.SetActive(false);
+            TURBOCam_.SetActive(false);
+        }
 
         resetAnimBool();
         shirokoPhase = fishingPhase.BEFORECASTING;
@@ -218,8 +281,29 @@ public class FisingManager : MonoBehaviour
             comboText.gameObject.SetActive(true);
         }
 
+        if(SceneManager.GetActiveScene().name == "Ice")
+        {
+            if ((isFacingRight && penguinSpawner.isPenguin) || (!isFacingRight && !penguinSpawner.isPenguin))
+            {
+                StartCoroutine(penguinSpawner.penguins[penguinSpawner.penguinIdx].GetComponent<Penguin>().HappyOut());
+                penguinSpawner.SpawnPenguin();
+            }
+            else
+            {
+                StartCoroutine(penguinSpawner.penguins[penguinSpawner.penguinIdx].GetComponent<Penguin>().AngryOut());
+            }
+        }
+
         emojiAboveLocation.GetComponent<SpriteRenderer>().sprite = heartEmoji;
         emojiAboveLocation.SetActive(true);
+
+        if(SceneManager.GetActiveScene().name == "Fin")
+        {
+            for(int i = 0; i < 3; i++)
+            {
+                hearts[i].SetActive(true);
+            }
+        }
 
         shirokoAudioSource.clip = heartClip;
         shirokoAudioSource.Play();
@@ -231,6 +315,14 @@ public class FisingManager : MonoBehaviour
         skipAnimation = false;
 
         emojiAboveLocation.SetActive(false);
+
+        if(SceneManager.GetActiveScene().name == "Fin")
+        {
+            for(int i = 0; i < 3; i++)
+            {
+                hearts[i].SetActive(false);
+            }
+        }
 
         if (gachaManager.comboSys)
         {
@@ -247,6 +339,14 @@ public class FisingManager : MonoBehaviour
 
         emojiBelowLocation.GetComponent<SpriteRenderer>().sprite = sweatEmoji;
         emojiBelowLocation.SetActive(true);
+
+        if(SceneManager.GetActiveScene().name == "Fin")
+        {
+            for(int i = 0; i < 3; i++)
+            {
+                sweats[i].SetActive(true);
+            }
+        }
 
         shirokoAudioSource.clip = sweatClip;
         shirokoAudioSource.loop = false;
@@ -267,6 +367,14 @@ public class FisingManager : MonoBehaviour
         skipAnimation = false;
 
         emojiBelowLocation.SetActive(false);
+
+        if(SceneManager.GetActiveScene().name == "Fin")
+        {
+            for(int i = 0; i < 3; i++)
+            {
+                sweats[i].SetActive(false);
+            }
+        }
     }
 
     private IEnumerator Timer()

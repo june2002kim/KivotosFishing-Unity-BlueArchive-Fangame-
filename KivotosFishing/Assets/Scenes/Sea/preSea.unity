@@ -11928,7 +11928,7 @@ GameObject:
   - component: {fileID: 738681725}
   - component: {fileID: 738681726}
   m_Layer: 0
-  m_Name: Iori
+  m_Name: Hanako
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11942,7 +11942,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738681723}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.5, y: -0.8, z: 0}
+  m_LocalPosition: {x: 4.5, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11992,7 +11992,7 @@ SpriteRenderer:
   m_SortingLayerID: -1640824703
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1281405948, guid: 760f6c85d7617b04b81cde638e5b9d54, type: 3}
+  m_Sprite: {fileID: 1181940600, guid: 38b8f68481db5404a95a408ff00fd42e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -12013,7 +12013,7 @@ Animator:
   m_GameObject: {fileID: 738681723}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f2231390dd7bf5d4c9d0aa3dba905698, type: 2}
+  m_Controller: {fileID: 9100000, guid: b7d8011460508df40a66945d8fec21df, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -14270,7 +14270,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925073753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17311,7 +17311,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047116520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20772,7 +20772,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5012492441374308243, guid: fc5a3cce9f0c8b54aa1b8082d0b4c89b, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 37a2e5a461da94946964072d07daa889, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5e994b03cb72f8341b8a90ae8e507542, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -28092,7 +28092,7 @@ MonoBehaviour:
   dialogueStrings:
   - characterinfo: {fileID: 11400000, guid: d8ce84ab5f1e7d94c86ddf4d2c893912, type: 2}
     profileindex: 0
-    dialoguetext: "\uC800 \uC5EC\uC720\uB85C\uC6B4 \uB290\uB08C. \uC751, \uACE0\uC218."
+    dialoguetext: "\uC751. \uC800 \uAC1C\uBC29\uC801\uC778 \uBAA8\uC2B5. \uC871\uACE0\uC218."
     lasttext: 0
     isUnknown: 0
     isUpEmoji: 1
@@ -28103,300 +28103,62 @@ MonoBehaviour:
     downEmojiLocation: {fileID: 1458062986}
     isSinging: 0
     songClip: {fileID: 0}
-  - characterinfo: {fileID: 11400000, guid: d8ce84ab5f1e7d94c86ddf4d2c893912, type: 2}
+  - characterinfo: {fileID: 11400000, guid: a7f791fea18d31643a053312a32af547, type: 2}
     profileindex: 0
-    dialoguetext: "\uD55C \uC218 \uAC00\uB974\uCE68 \uBD80\uD0C1\uD574."
-    lasttext: 0
-    isUnknown: 0
-    isUpEmoji: 1
-    upEmoji: {fileID: -220938367, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
-    upEmojiLocation: {fileID: 2053278885}
-    isDownEmoji: 0
-    downEmoji: {fileID: 0}
-    downEmojiLocation: {fileID: 1458062986}
-    isSinging: 0
-    songClip: {fileID: 0}
-  - characterinfo: {fileID: 11400000, guid: 970670e2ae25b7343976c325043c95d1, type: 2}
-    profileindex: 0
-    dialoguetext: "\uC544\uC787 \uAE5C\uC9DD\uC774\uC57C! \uC120\uB3C4\uBD80 \uC560\uC778\uC904
-      \uC54C\uC558\uC796\uC544."
+    dialoguetext: "\uC5B4\uBA38, \uC2DC\uB85C\uCF54 \uC528. \uC624\uB79C\uB9CC\uC774\uC5D0\uC694."
     lasttext: 0
     isUnknown: 1
     isUpEmoji: 1
-    upEmoji: {fileID: 1447866212, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
+    upEmoji: {fileID: -220938367, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
     upEmojiLocation: {fileID: 925073753}
     isDownEmoji: 0
     downEmoji: {fileID: 0}
     downEmojiLocation: {fileID: 703962681}
-    isSinging: 1
+    isSinging: 0
     songClip: {fileID: 8300000, guid: c476d739a27be4948a5d7d87d4ae4e01, type: 3}
-  - characterinfo: {fileID: 11400000, guid: 970670e2ae25b7343976c325043c95d1, type: 2}
-    profileindex: 1
-    dialoguetext: "\uADF8\uB798\uC11C \uBB50\uB77C\uACE0?"
+  - characterinfo: {fileID: 11400000, guid: d8ce84ab5f1e7d94c86ddf4d2c893912, type: 2}
+    profileindex: 0
+    dialoguetext: "\uC751, \uC624\uB79C\uB9CC\uC774\uC57C. \uD639\uC2DC \uC54C\uB824\uC904\uB9CC\uD55C
+      \uB09A\uC2DC \uBE44\uBC95 \uAC19\uC740\uAC8C \uC5C6\uC744\uAE4C?"
     lasttext: 0
     isUnknown: 0
     isUpEmoji: 1
-    upEmoji: {fileID: 1451282200, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
+    upEmoji: {fileID: -220938367, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
+    upEmojiLocation: {fileID: 2053278885}
+    isDownEmoji: 0
+    downEmoji: {fileID: 0}
+    downEmojiLocation: {fileID: 1458062986}
+    isSinging: 0
+    songClip: {fileID: 0}
+  - characterinfo: {fileID: 11400000, guid: a7f791fea18d31643a053312a32af547, type: 2}
+    profileindex: 1
+    dialoguetext: "\uB09A\uC2DC\uC5D0\uB294 \uC870\uC608\uAC00 \uAE4A\uC9C0 \uC54A\uC9C0\uB9CC,
+      \uCD94\uCC9C\uD560 \uBB3C\uAC74\uC774\uB77C\uBA74 \uD558\uB098 \uC788\uC5B4\uC694\u2661"
+    lasttext: 0
+    isUnknown: 0
+    isUpEmoji: 1
+    upEmoji: {fileID: 101464340, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
     upEmojiLocation: {fileID: 925073753}
     isDownEmoji: 0
     downEmoji: {fileID: 0}
     downEmojiLocation: {fileID: 703962681}
     isSinging: 1
-    songClip: {fileID: 8300000, guid: b4a30f7baf85bf24b8c37510ec358dda, type: 3}
-  - characterinfo: {fileID: 11400000, guid: d8ce84ab5f1e7d94c86ddf4d2c893912, type: 2}
-    profileindex: 0
-    dialoguetext: "\uB09A\uC2DC \uACE0\uC218\uC758 \uBE44\uC804\uC744 \uC804\uC218\uD574\uC92C\uC73C\uBA74
-      \uC88B\uACA0\uC5B4."
-    lasttext: 0
-    isUnknown: 0
-    isUpEmoji: 1
-    upEmoji: {fileID: -220938367, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
-    upEmojiLocation: {fileID: 2053278885}
-    isDownEmoji: 0
-    downEmoji: {fileID: 0}
-    downEmojiLocation: {fileID: 1458062986}
-    isSinging: 0
-    songClip: {fileID: 8300000, guid: b4a30f7baf85bf24b8c37510ec358dda, type: 3}
-  - characterinfo: {fileID: 11400000, guid: 970670e2ae25b7343976c325043c95d1, type: 2}
+    songClip: {fileID: 8300000, guid: 6a57162c445fb9e47bea11b4abe1f2c9, type: 3}
+  - characterinfo: {fileID: 11400000, guid: a7f791fea18d31643a053312a32af547, type: 2}
     profileindex: 1
-    dialoguetext: "\uB09A\uC2DC \uACE0\uC218\u2026? \uC870\uAE08 \uB72C\uAE08 \uC5C6\uB294\uB370."
-    lasttext: 0
-    isUnknown: 0
-    isUpEmoji: 1
-    upEmoji: {fileID: 1451282200, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
-    upEmojiLocation: {fileID: 925073753}
-    isDownEmoji: 0
-    downEmoji: {fileID: 0}
-    downEmojiLocation: {fileID: 703962681}
-    isSinging: 1
-    songClip: {fileID: 8300000, guid: b4a30f7baf85bf24b8c37510ec358dda, type: 3}
-  - characterinfo: {fileID: 11400000, guid: 970670e2ae25b7343976c325043c95d1, type: 2}
-    profileindex: 1
-    dialoguetext: "\uB098\uB294 \uB09A\uC2DC \uACE0\uC218\uB3C4 \uC544\uB2D0\uBFD0\uB354\uB7EC\n\uC9C0\uAE08\uC740
-      \uBAB0\uB798,,, \uC544\uB2C8\uB77C \uD734\uAC00\uB97C \uC990\uAE30\uB294 \uC911\uC774\uB780
-      \uB9D0\uC774\uC57C."
-    lasttext: 0
-    isUnknown: 0
-    isUpEmoji: 1
-    upEmoji: {fileID: -220938367, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
-    upEmojiLocation: {fileID: 925073753}
-    isDownEmoji: 0
-    downEmoji: {fileID: 0}
-    downEmojiLocation: {fileID: 703962681}
-    isSinging: 0
-    songClip: {fileID: 8300000, guid: b4a30f7baf85bf24b8c37510ec358dda, type: 3}
-  - characterinfo: {fileID: 11400000, guid: 970670e2ae25b7343976c325043c95d1, type: 2}
-    profileindex: 1
-    dialoguetext: "\uC804\uC218\uD574\uC904 \uBE44\uC804\uAC19\uC740\uAC74 \uC5C6\uC9C0\uB9CC
-      \n\uC606\uC790\uB9AC\uC5D0 \uC120\uBCA0\uB4DC\uB098 \uD558\uB098 \uD3BC\uCCD0
-      \uC904 \uD14C\uB2C8\uAE4C \uC870\uAE08 \uC26C\uB2E4\uAC00 \uAC00."
-    lasttext: 0
-    isUnknown: 0
-    isUpEmoji: 1
-    upEmoji: {fileID: -220938367, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
-    upEmojiLocation: {fileID: 925073753}
-    isDownEmoji: 0
-    downEmoji: {fileID: 0}
-    downEmojiLocation: {fileID: 703962681}
-    isSinging: 0
-    songClip: {fileID: 8300000, guid: b4a30f7baf85bf24b8c37510ec358dda, type: 3}
-  - characterinfo: {fileID: 11400000, guid: d8ce84ab5f1e7d94c86ddf4d2c893912, type: 2}
-    profileindex: 0
-    dialoguetext: "\"\uB530\uB974\uB989\""
-    lasttext: 0
-    isUnknown: 0
-    isUpEmoji: 0
-    upEmoji: {fileID: -220938367, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
-    upEmojiLocation: {fileID: 2053278885}
-    isDownEmoji: 0
-    downEmoji: {fileID: 0}
-    downEmojiLocation: {fileID: 1458062986}
-    isSinging: 0
-    songClip: {fileID: 0}
-  - characterinfo: {fileID: 11400000, guid: d8ce84ab5f1e7d94c86ddf4d2c893912, type: 2}
-    profileindex: 0
-    dialoguetext: "\u2026\uC751\u2026\uC751\u2026\uC54C\uC558\uC5B4. \uC2A4\uD53C\uCEE4\uD3F0\uC73C\uB85C
-      \uD574\uC904\uAC8C."
-    lasttext: 0
-    isUnknown: 0
-    isUpEmoji: 1
-    upEmoji: {fileID: -220938367, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
-    upEmojiLocation: {fileID: 2053278885}
-    isDownEmoji: 0
-    downEmoji: {fileID: 0}
-    downEmojiLocation: {fileID: 1458062986}
-    isSinging: 0
-    songClip: {fileID: 0}
-  - characterinfo: {fileID: 11400000, guid: 970670e2ae25b7343976c325043c95d1, type: 2}
-    profileindex: 1
-    dialoguetext: ???
-    lasttext: 0
-    isUnknown: 0
-    isUpEmoji: 1
-    upEmoji: {fileID: 1451282200, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
-    upEmojiLocation: {fileID: 925073753}
-    isDownEmoji: 0
-    downEmoji: {fileID: 0}
-    downEmojiLocation: {fileID: 703962681}
-    isSinging: 1
-    songClip: {fileID: 8300000, guid: b4a30f7baf85bf24b8c37510ec358dda, type: 3}
-  - characterinfo: {fileID: 11400000, guid: b129964c6568d9d44a8d290d1fa86fe0, type: 2}
-    profileindex: 0
-    dialoguetext: "\uAE30\uC5B4\uCF54 \uC81C\uAC00 \uB2E4\uB978 \uBD84\uC744 \uD1B5\uD574\uC11C
-      \uC5F0\uB77D\uD558\uAC8C \uB9CC\uB4DC\uC2DC\uB124\uC694."
-    lasttext: 0
-    isUnknown: 1
-    isUpEmoji: 0
-    upEmoji: {fileID: -220938367, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
-    upEmojiLocation: {fileID: 2053278885}
-    isDownEmoji: 0
-    downEmoji: {fileID: 0}
-    downEmojiLocation: {fileID: 1458062986}
-    isSinging: 0
-    songClip: {fileID: 0}
-  - characterinfo: {fileID: 11400000, guid: 970670e2ae25b7343976c325043c95d1, type: 2}
-    profileindex: 3
-    dialoguetext: "\uC544\u2026 \uC544\uCF54 \uCA29\u2026.\n\uADF8\uCE58\uB9CC \uC774\uBC88\uC5D4
-      \uC9C4\uC9DC \uD734\uAC00\uB77C\uACE0 \uD588\uC796\uC544.\n\uC7A0\uAE50 \uB208
-      \uC880 \uBD99\uC600\uB354\uB2C8 \uBB38\uC790\uAC00 100\uD1B5 \uAC00\uAE4C\uC774
-      \uC640 \uC788\uB294\uB370 \uADC0\uCC2E\uC740 \uC77C\uC77C\uAC8C \uBD84\uBA85\uD558\uC796\uC544!"
-    lasttext: 0
-    isUnknown: 0
-    isUpEmoji: 0
-    upEmoji: {fileID: 1451282200, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
-    upEmojiLocation: {fileID: 925073753}
-    isDownEmoji: 0
-    downEmoji: {fileID: 0}
-    downEmojiLocation: {fileID: 703962681}
-    isSinging: 0
-    songClip: {fileID: 8300000, guid: b4a30f7baf85bf24b8c37510ec358dda, type: 3}
-  - characterinfo: {fileID: 11400000, guid: b129964c6568d9d44a8d290d1fa86fe0, type: 2}
-    profileindex: 2
-    dialoguetext: "\uADF8\uB798\uC11C \uC7A0\uC218\uB97C \uD0C0\uC168\uB2E4\uB294
-      \uAC74\uAC00\uC694\u2026?"
-    lasttext: 0
-    isUnknown: 0
-    isUpEmoji: 0
-    upEmoji: {fileID: -220938367, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
-    upEmojiLocation: {fileID: 2053278885}
-    isDownEmoji: 0
-    downEmoji: {fileID: 0}
-    downEmojiLocation: {fileID: 1458062986}
-    isSinging: 0
-    songClip: {fileID: 0}
-  - characterinfo: {fileID: 11400000, guid: b129964c6568d9d44a8d290d1fa86fe0, type: 2}
-    profileindex: 2
-    dialoguetext: "\uC9C4\uC9DC\uB85C \uAC04\uB2E8\uD55C \uC77C\uC774\uB2C8\uAE4C
-      \uBE68\uB9AC \uD574\uCE58\uC6B0\uACE0 \uB9C8\uC800 \uC26C\uC5B4\uC8FC\uC138\uC694."
-    lasttext: 0
-    isUnknown: 0
-    isUpEmoji: 0
-    upEmoji: {fileID: -220938367, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
-    upEmojiLocation: {fileID: 2053278885}
-    isDownEmoji: 0
-    downEmoji: {fileID: 0}
-    downEmojiLocation: {fileID: 1458062986}
-    isSinging: 0
-    songClip: {fileID: 0}
-  - characterinfo: {fileID: 11400000, guid: b129964c6568d9d44a8d290d1fa86fe0, type: 2}
-    profileindex: 2
-    dialoguetext: "\uBD88\uB7C9\uBC30\uB4E4\uC774 \uC774\uC624\uB9AC \uADFC\uCC98
-      \uD574\uC548 \uBB3C\uACE0\uAE30 \uC528\uB97C \uB9D0\uB9AC\uACE0 \uC788\uB2E4\uACE0\uD574\uC694.\n\uBB3C\uACE0\uAE30\uB97C
-      \uB3C5\uC810\uD574\uC11C \uC8FC\uBCC0 \uBC14\uB2E4\uC758 \uC9D1\uC744 \uC7A5\uC545\uD558\uACA0\uB2E4\uB098
-      \uBB50\uB77C\uB098."
-    lasttext: 0
-    isUnknown: 0
-    isUpEmoji: 0
-    upEmoji: {fileID: -220938367, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
-    upEmojiLocation: {fileID: 2053278885}
-    isDownEmoji: 0
-    downEmoji: {fileID: 0}
-    downEmojiLocation: {fileID: 1458062986}
-    isSinging: 0
-    songClip: {fileID: 0}
-  - characterinfo: {fileID: 11400000, guid: b129964c6568d9d44a8d290d1fa86fe0, type: 2}
-    profileindex: 2
-    dialoguetext: "\uB300\uC751 \uAC00\uB2A5\uD55C \uC778\uC6D0\uC774 \uC774\uC624\uB9AC
-      \uD63C\uC790 \uBFD0\uC774\uB2C8 \uB418\uB3C4\uB85D \uBE68\uB9AC \uD574\uACB0
-      \uBD80\uD0C1\uB4DC\uB824\uC694."
-    lasttext: 0
-    isUnknown: 0
-    isUpEmoji: 0
-    upEmoji: {fileID: -220938367, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
-    upEmojiLocation: {fileID: 2053278885}
-    isDownEmoji: 0
-    downEmoji: {fileID: 0}
-    downEmojiLocation: {fileID: 1458062986}
-    isSinging: 0
-    songClip: {fileID: 0}
-  - characterinfo: {fileID: 11400000, guid: 970670e2ae25b7343976c325043c95d1, type: 2}
-    profileindex: 3
-    dialoguetext: "\uC5B4\uCA4C\uB2E4 \uC774\uB7F0 \uC77C\uC774\u2026"
-    lasttext: 0
-    isUnknown: 0
-    isUpEmoji: 1
-    upEmoji: {fileID: -220938367, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
-    upEmojiLocation: {fileID: 925073753}
-    isDownEmoji: 0
-    downEmoji: {fileID: 0}
-    downEmojiLocation: {fileID: 703962681}
-    isSinging: 0
-    songClip: {fileID: 8300000, guid: b4a30f7baf85bf24b8c37510ec358dda, type: 3}
-  - characterinfo: {fileID: 11400000, guid: 970670e2ae25b7343976c325043c95d1, type: 2}
-    profileindex: 3
-    dialoguetext: "\uC800\uAE30\u2026 \uC5FC\uCE58\uC5C6\uC9C0\uB9CC \uC870\uAE08
-      \uB3C4\uC640\uC8FC\uC9C0 \uC54A\uC744\uB798\u2026"
-    lasttext: 0
-    isUnknown: 0
-    isUpEmoji: 1
-    upEmoji: {fileID: -220938367, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
-    upEmojiLocation: {fileID: 925073753}
-    isDownEmoji: 0
-    downEmoji: {fileID: 0}
-    downEmojiLocation: {fileID: 703962681}
-    isSinging: 0
-    songClip: {fileID: 8300000, guid: b4a30f7baf85bf24b8c37510ec358dda, type: 3}
-  - characterinfo: {fileID: 11400000, guid: 970670e2ae25b7343976c325043c95d1, type: 2}
-    profileindex: 2
-    dialoguetext: "\uBD88\uB7C9\uBC30\uB4E4\uC758 \uCC98\uB9AC\uB294 \uB0B4\uAC00
-      \uB9E1\uC744\uD14C\uB2C8\uAE4C \n\uC2DC\uB85C\uCF54 \uCA29\uC740 \uAC54\uB124\uB4E4\uC774
-      \uC7A1\uC740 \uBB3C\uACE0\uAE30\uC758 \uD655\uBCF4\uB97C \uB3C4\uC640\uC8FC\uBA74
-      \uC88B\uACA0\uC5B4\u2026"
-    lasttext: 0
-    isUnknown: 0
-    isUpEmoji: 1
-    upEmoji: {fileID: -220938367, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
-    upEmojiLocation: {fileID: 925073753}
-    isDownEmoji: 0
-    downEmoji: {fileID: 0}
-    downEmojiLocation: {fileID: 703962681}
-    isSinging: 0
-    songClip: {fileID: 8300000, guid: b4a30f7baf85bf24b8c37510ec358dda, type: 3}
-  - characterinfo: {fileID: 11400000, guid: d8ce84ab5f1e7d94c86ddf4d2c893912, type: 2}
-    profileindex: 0
-    dialoguetext: "\uC751. \uD611\uB825\uD558\uB3C4\uB85D \uD560\uAC8C."
-    lasttext: 0
-    isUnknown: 0
-    isUpEmoji: 1
-    upEmoji: {fileID: -220938367, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
-    upEmojiLocation: {fileID: 2053278885}
-    isDownEmoji: 0
-    downEmoji: {fileID: 0}
-    downEmojiLocation: {fileID: 1458062986}
-    isSinging: 0
-    songClip: {fileID: 0}
-  - characterinfo: {fileID: 11400000, guid: 970670e2ae25b7343976c325043c95d1, type: 2}
-    profileindex: 2
-    dialoguetext: "\uACE0\uB9C8\uC6CC\u2026."
+    dialoguetext: "\uADF8\uB7F0\uB370 \uBB3C\uB54C\uB97C \uCC29\uAC01\uD574\uC11C
+      \uD30C\uB3C4\uC5D0 \uD758\uB7EC\uB0B4\uB824\uAC04 \uC9D0 \uC18D\uC5D0 \uADF8
+      \uBB3C\uAC74\uC774 \uB4E4\uC5B4\uC788\uC5C8\uB294\uB370\n\uC800\uD76C \uC9D0
+      \uAC74\uC838\uC62C\uB9AC\uB294 \uAC78 \uB3C4\uC640\uC8FC\uC2E4 \uC218 \uC788\uC73C\uC2E4\uAE4C\uC694?"
     lasttext: 1
     isUnknown: 0
     isUpEmoji: 1
-    upEmoji: {fileID: -220938367, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
+    upEmoji: {fileID: 1451282200, guid: 3e981ef7199323d4eb5ff2b3daa0e5ec, type: 3}
     upEmojiLocation: {fileID: 925073753}
     isDownEmoji: 0
     downEmoji: {fileID: 0}
     downEmojiLocation: {fileID: 703962681}
-    isSinging: 0
+    isSinging: 1
     songClip: {fileID: 8300000, guid: b4a30f7baf85bf24b8c37510ec358dda, type: 3}
 --- !u!4 &1773247392
 Transform:
@@ -33694,7 +33456,7 @@ SpriteRenderer:
   m_SortingLayerID: -1381449583
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -252087492, guid: 09b3613e1b0cbb345994374bbab1f28d, type: 3}
+  m_Sprite: {fileID: 745366467, guid: 09b3613e1b0cbb345994374bbab1f28d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

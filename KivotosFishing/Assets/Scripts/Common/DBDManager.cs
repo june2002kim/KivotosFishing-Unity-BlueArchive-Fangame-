@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DBDManager : MonoBehaviour
@@ -19,6 +20,10 @@ public class DBDManager : MonoBehaviour
     [SerializeField] private GameObject DBDcakePrefab;
     [SerializeField] private clockHand clockHand;
     [SerializeField] private GameObject DBDCam;
+
+    [Header("------MIRROR------")]
+    [SerializeField] private GameObject DBDCam_;
+    [SerializeField] private RectTransform panelTransform_;
 
     [Header("------Audio------")]
     [SerializeField] private AudioClip goodClip;
@@ -47,7 +52,30 @@ public class DBDManager : MonoBehaviour
     {
         if(fishingManager.shirokoPhase == fishingPhase.ENTERDBD)
         {
-            DBDCam.SetActive(true);
+            if(SceneManager.GetActiveScene().name == "Ice")
+            {
+                if(fishingManager.isFacingRight)
+                {
+                    DBDCam.SetActive(true);
+                    
+                    panelTransform_.offsetMax = Vector2.zero;
+
+                    panelTransform_.offsetMin = new Vector2(700, 0);
+                }
+                else
+                {
+                    DBDCam_.SetActive(true);
+                    
+                    panelTransform_.offsetMin = Vector2.zero;
+
+                    panelTransform_.offsetMax = new Vector2(-700, 0);
+                }
+            }
+            else
+            {
+                DBDCam.SetActive(true);
+            }
+
             dbdCanvas.SetActive(true);
 
             GameObject[] spawnedCake = GameObject.FindGameObjectsWithTag("Cake");

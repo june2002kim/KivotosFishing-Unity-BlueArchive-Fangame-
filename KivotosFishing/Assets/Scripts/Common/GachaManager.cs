@@ -13,6 +13,7 @@ public class GachaManager : MonoBehaviour
     [SerializeField] List<FishData> R_Fish;
     [SerializeField] List<FishData> SR_Fish;
     [SerializeField] List<FishData> SSR_Fish;
+    [SerializeField] List<FishData> SUSHI_Fish;
     [SerializeField] GameObject fishPrefab;
 
     [Header("------Rarity probability------")]
@@ -35,12 +36,12 @@ public class GachaManager : MonoBehaviour
 
     void Start()
     {
-        ResetGacha();    
+        ResetGacha();
     }
 
     void Update()
     {
-        if(fishingManager.shirokoPhase == fishingPhase.ENTERGACHA)
+        if (fishingManager.shirokoPhase == fishingPhase.ENTERGACHA)
         {
             fishingManager.shirokoPhase = fishingPhase.BLOCKGACHA;
             startGacha();
@@ -49,10 +50,10 @@ public class GachaManager : MonoBehaviour
 
     private void startGacha()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject spawnedFish = GameObject.FindGameObjectWithTag("Fish");
-            if(spawnedFish != null)
+            if (spawnedFish != null)
             {
                 Destroy(spawnedFish);
             }
@@ -78,32 +79,41 @@ public class GachaManager : MonoBehaviour
         int fishPick;
         FishData rtnData;
 
-        if(ceilingSys && ceilingStack >= ceilingMax)
+        if (fishingManager.isFacingRight)
         {
-            // SSR
-            fishPick = Random.Range(0, SSR_Fish.Count);
-            rtnData = SSR_Fish[fishPick];
+            if (ceilingSys && ceilingStack >= ceilingMax)
+            {
+                // SSR
+                fishPick = Random.Range(0, SSR_Fish.Count);
+                rtnData = SSR_Fish[fishPick];
 
-            return rtnData;
-        }
+                return rtnData;
+            }
 
-        if(rarityPick <= SuperSuperRare)
-        {
-            // SSR
-            fishPick = Random.Range(0, SSR_Fish.Count);
-            rtnData = SSR_Fish[fishPick];
-        }
-        else if(rarityPick <= SuperSuperRare + SuperRare)
-        {
-            // SR
-            fishPick = Random.Range(0, SR_Fish.Count);
-            rtnData = SR_Fish[fishPick];
+            if (rarityPick <= SuperSuperRare)
+            {
+                // SSR
+                fishPick = Random.Range(0, SSR_Fish.Count);
+                rtnData = SSR_Fish[fishPick];
+            }
+            else if (rarityPick <= SuperSuperRare + SuperRare)
+            {
+                // SR
+                fishPick = Random.Range(0, SR_Fish.Count);
+                rtnData = SR_Fish[fishPick];
+            }
+            else
+            {
+                // R
+                fishPick = Random.Range(0, R_Fish.Count);
+                rtnData = R_Fish[fishPick];
+            }
         }
         else
         {
-            // R
-            fishPick = Random.Range(0, R_Fish.Count);
-            rtnData = R_Fish[fishPick];
+            // ICE Stage
+            fishPick = Random.Range(0, SUSHI_Fish.Count);
+            rtnData = SUSHI_Fish[fishPick];
         }
 
         return rtnData;
@@ -123,8 +133,9 @@ public class GachaManager : MonoBehaviour
 
     public void ComboUp()
     {
-        if(Rare > SSRset && SuperSuperRare < Rset)
+        if (Rare > SSRset && SuperSuperRare < Rset)
         {
+            Debug.Log("combo UP!!!");
             comboCnt++;
 
             Rare--;
@@ -134,6 +145,7 @@ public class GachaManager : MonoBehaviour
 
     public void ComboDown()
     {
+        Debug.Log("combo DOWN!!!");
         Rare = Rset;
         SuperRare = SRset;
         SuperSuperRare = SSRset;

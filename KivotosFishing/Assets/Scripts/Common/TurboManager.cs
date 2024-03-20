@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TurboManager : MonoBehaviour
@@ -15,6 +16,10 @@ public class TurboManager : MonoBehaviour
 
     [Header("------UGUI------")]
     [SerializeField] private GameObject TURBOCam;
+
+    [Header("------MIRROR------")]
+    [SerializeField] private GameObject TURBOCam_;
+    [SerializeField] private RectTransform sliderTransform_;
 
     [Header("------Timer------")]
     [SerializeField] private Slider turboSlider;
@@ -43,7 +48,26 @@ public class TurboManager : MonoBehaviour
     {
         if(fishingManager.shirokoPhase == fishingPhase.ENTERTURBO)
         {
-            TURBOCam.SetActive(true);
+            if(SceneManager.GetActiveScene().name == "Ice")
+            {
+                if(fishingManager.isFacingRight)
+                {
+                    TURBOCam.SetActive(true);
+                    
+                    sliderTransform_.anchoredPosition = new Vector2(500, 0);
+                }
+                else
+                {
+                    TURBOCam_.SetActive(true);
+
+                    sliderTransform_.anchoredPosition = new Vector2(-500, 0);
+                }
+            }
+            else
+            {
+                TURBOCam.SetActive(true);
+            }
+
             turboCanvas.SetActive(true);
             rarity = gachaManager.fish.fishData.FishRarity.ToString().Length;
 

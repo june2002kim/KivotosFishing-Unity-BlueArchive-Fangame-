@@ -12,6 +12,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private FisingManager fishingManager;
     [SerializeField] private AudioSource shirokoAudioSource;
     [SerializeField] private GameObject fish;
+    [SerializeField] private GameObject fish_;
     [SerializeField] private ParticleSystem particleSystem;
 
     [Header("------Audios------")]
@@ -21,12 +22,14 @@ public class ScoreManager : MonoBehaviour
     public int totalCnt;
     public int totalScore;
     private int addScore;
+    public string fishName;
 
     void Awake()
     {
         totalCnt = 0;
         totalScore = 0;
         addScore = 0;
+        fishName = "";
     }
     
     private void Update()
@@ -39,8 +42,16 @@ public class ScoreManager : MonoBehaviour
             shirokoAudioSource.loop = false;
             shirokoAudioSource.Stop();
 
-            fish.GetComponent<SpriteRenderer>().sprite = gachaManager.fish.fishData.FishImage;
-            fish.SetActive(true);
+            if(fishingManager.isFacingRight)
+            {
+                fish.GetComponent<SpriteRenderer>().sprite = gachaManager.fish.fishData.FishImage;
+                fish.SetActive(true);
+            }
+            else
+            {
+                fish_.GetComponent<SpriteRenderer>().sprite = gachaManager.fish.fishData.FishImage;
+                fish_.SetActive(true);
+            }
 
             shirokoAudioSource.clip = starClip;
             shirokoAudioSource.PlayDelayed(1f);
@@ -57,7 +68,14 @@ public class ScoreManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.R) && fishingManager.shirokoPhase == fishingPhase.BLOCKRECORD)
         {
-            fish.SetActive(false);
+            if(fishingManager.isFacingRight)
+            {
+                fish.SetActive(false);
+            }
+            else
+            {
+                fish_.SetActive(false);
+            }
             StartCoroutine(fishingManager.HappyFishing());
         }
     }
@@ -107,10 +125,13 @@ public class ScoreManager : MonoBehaviour
 
     private void writeJournal()
     {
-        int fishCnt = PlayerPrefs.GetInt(gachaManager.fish.fishData.FishName);
-        PlayerPrefs.SetInt(gachaManager.fish.fishData.FishName, ++fishCnt);
+        fishName = gachaManager.fish.fishData.FishName;
 
-        Debug.Log("Caught " + PlayerPrefs.GetInt(gachaManager.fish.fishData.FishName) + " " + gachaManager.fish.fishData.FishName + ".");
+        int fishCnt = PlayerPrefs.GetInt(fishName);
+        PlayerPrefs.SetInt(fishName, ++fishCnt);
+        
+
+        Debug.Log("Caught " + PlayerPrefs.GetInt(fishName) + " " + fishName + ".");
     }
 
     private void calScore()
